@@ -2,6 +2,8 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
+        gradlePluginPortal()
     }
 
     ext {
@@ -20,6 +22,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
+        gradlePluginPortal()
 
         flatDir {
             dirs 'misc/libs'
