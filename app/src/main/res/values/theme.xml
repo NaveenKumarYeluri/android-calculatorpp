@@ -38,7 +38,7 @@
         <item name="android:windowBackground">@color/cpp_bg</item>
 
         <item name="alertDialogTheme">@style/Cpp.Theme.Material.Dialog.Alert</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Material</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
         <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
         <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
@@ -118,7 +118,7 @@
         <item name="colorError">@color/red_a700</item>
 
         <item name="alertDialogTheme">@style/Cpp.Theme.Material.Light.Dialog.Alert</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Material</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
         <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
         <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
