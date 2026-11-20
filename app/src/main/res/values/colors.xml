@@ -73,6 +73,8 @@
     <!-- True Black (AMOLED) Palette -->
     <color name="amoled_black">#000000</color>
     <color name="amoled_editor_bg">#000000</color>
+    <color name="amoled_text">#ffffff</color>
+    <color name="amoled_text_secondary">#e0e0e0</color>
     <color name="amoled_button_digit">#0a0a0a</color>
     <color name="amoled_button_digit_pressed">#222222</color>
     <color name="amoled_button_control">#141414</color>
@@ -84,6 +86,8 @@
     <!-- Grey (Material Neutral) Palette -->
     <color name="grey_theme_bg">#2b2d30</color>
     <color name="grey_theme_editor_bg">#1e1f22</color>
+    <color name="grey_theme_text">#f1f3f4</color>
+    <color name="grey_theme_text_secondary">#e8eaed</color>
     <color name="grey_theme_button_digit">#35373c</color>
     <color name="grey_theme_button_digit_pressed">#43454b</color>
     <color name="grey_theme_button_control">#3e4147</color>

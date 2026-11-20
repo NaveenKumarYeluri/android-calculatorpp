@@ -3,17 +3,17 @@
 
     <style name="CppKeyboardButton.Material.TrueBlack.Digit" parent="CppKeyboardButton">
         <item name="android:background">@drawable/material_button_true_black</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/amoled_text</item>
     </style>
 
     <style name="CppKeyboardButton.Material.TrueBlack.Control" parent="CppKeyboardButton">
         <item name="android:background">@drawable/material_button_true_black_control</item>
-        <item name="android:textColor">#e0e0e0</item>
+        <item name="android:textColor">@color/amoled_text_secondary</item>
     </style>
 
     <style name="CppKeyboardButton.Material.TrueBlack.Operation" parent="CppKeyboardButton">
         <item name="android:background">@drawable/material_button_true_black_op</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/amoled_text</item>
     </style>
 
     <!-- Legacy alias styles so existing layouts/bindings remain valid -->
@@ -26,10 +26,9 @@
     <style name="Cpp.Theme.Material.Black" parent="Cpp.Theme">
         <item name="android:windowBackground">@color/amoled_black</item>
         <item name="cpp_editor_bg">@color/amoled_editor_bg</item>
-        <item name="cpp_bg">@color/amoled_black</item>
         <item name="cpp_fab_bg">@color/amoled_button_op</item>
         <item name="colorAccent">@color/amoled_accent</item>
-        <item name="cpp_text_color">#ffffff</item>
+        <item name="cpp_text_color">@color/amoled_text</item>
         <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.TrueBlack.Digit</item>
         <item name="cpp_button_style_control">@style/CppKeyboardButton.Material.TrueBlack.Control</item>
         <item name="cpp_button_style_control_highlighted">@style/CppKeyboardButton.Material.TrueBlack.Control</item>
@@ -40,7 +39,6 @@
     <style name="Cpp.Theme.Material.Black.Dialog" parent="Cpp.Theme.Dialog">
         <item name="android:windowBackground">@color/amoled_black</item>
         <item name="cpp_editor_bg">@color/amoled_editor_bg</item>
-        <item name="cpp_bg">@color/amoled_black</item>
         <item name="cpp_fab_bg">@color/amoled_button_op</item>
         <item name="colorAccent">@color/amoled_accent</item>
         <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.TrueBlack.Digit</item>
@@ -53,7 +51,6 @@
     <style name="Cpp.Theme.Material.Black.Dialog.Alert" parent="Cpp.Theme.Dialog.Alert">
         <item name="android:windowBackground">@color/amoled_black</item>
         <item name="cpp_editor_bg">@color/amoled_editor_bg</item>
-        <item name="cpp_bg">@color/amoled_black</item>
         <item name="cpp_fab_bg">@color/amoled_button_op</item>
         <item name="colorAccent">@color/amoled_accent</item>
         <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.TrueBlack.Digit</item>
