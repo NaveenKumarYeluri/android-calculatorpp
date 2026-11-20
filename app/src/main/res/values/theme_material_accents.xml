@@ -9,6 +9,9 @@
     </style>
     <style name="Cpp.Theme.Material.Light.Blue" parent="Cpp.Theme.Material.Light">
         <item name="colorAccent">@color/accent_blue</item>
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorSecondary">@color/accent_blue</item>
+        <item name="colorControlActivated">@color/accent_blue</item>
         <item name="cpp_fab_bg">@color/accent_blue</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Blue</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Blue</item>
@@ -24,6 +27,9 @@
     </style>
     <style name="Cpp.Theme.Material.Light.Green" parent="Cpp.Theme.Material.Light">
         <item name="colorAccent">@color/accent_green</item>
+        <item name="colorPrimary">@color/accent_green</item>
+        <item name="colorSecondary">@color/accent_green</item>
+        <item name="colorControlActivated">@color/accent_green</item>
         <item name="cpp_fab_bg">@color/accent_green</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Green</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Green</item>
@@ -39,6 +45,9 @@
     </style>
     <style name="Cpp.Theme.Material.Light.Purple" parent="Cpp.Theme.Material.Light">
         <item name="colorAccent">@color/accent_purple</item>
+        <item name="colorPrimary">@color/accent_purple</item>
+        <item name="colorSecondary">@color/accent_purple</item>
+        <item name="colorControlActivated">@color/accent_purple</item>
         <item name="cpp_fab_bg">@color/accent_purple</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Purple</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Purple</item>
@@ -54,6 +63,9 @@
     </style>
     <style name="Cpp.Theme.Material.Light.Amber" parent="Cpp.Theme.Material.Light">
         <item name="colorAccent">@color/accent_amber</item>
+        <item name="colorPrimary">@color/accent_amber</item>
+        <item name="colorSecondary">@color/accent_amber</item>
+        <item name="colorControlActivated">@color/accent_amber</item>
         <item name="cpp_fab_bg">@color/accent_amber</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Amber</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Amber</item>
@@ -69,6 +81,9 @@
     </style>
     <style name="Cpp.Theme.Material.Light.Red" parent="Cpp.Theme.Material.Light">
         <item name="colorAccent">@color/accent_red</item>
+        <item name="colorPrimary">@color/accent_red</item>
+        <item name="colorSecondary">@color/accent_red</item>
+        <item name="colorControlActivated">@color/accent_red</item>
         <item name="cpp_fab_bg">@color/accent_red</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Red</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Red</item>
@@ -84,6 +99,9 @@
     </style>
     <style name="Cpp.Theme.Material.Light.Pink" parent="Cpp.Theme.Material.Light">
         <item name="colorAccent">@color/accent_pink</item>
+        <item name="colorPrimary">@color/accent_pink</item>
+        <item name="colorSecondary">@color/accent_pink</item>
+        <item name="colorControlActivated">@color/accent_pink</item>
         <item name="cpp_fab_bg">@color/accent_pink</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Pink</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Pink</item>
@@ -100,6 +118,9 @@
     </style>
     <style name="Cpp.Theme.Material.Dark.Teal" parent="Cpp.Theme.Material">
         <item name="colorAccent">@color/accent_dark_teal</item>
+        <item name="colorPrimary">@color/accent_dark_teal</item>
+        <item name="colorSecondary">@color/accent_dark_teal</item>
+        <item name="colorControlActivated">@color/accent_dark_teal</item>
         <item name="cpp_fab_bg">@color/accent_dark_teal</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Teal</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Teal</item>
@@ -114,6 +135,9 @@
     </style>
     <style name="Cpp.Theme.Material.Dark.Green" parent="Cpp.Theme.Material">
         <item name="colorAccent">@color/accent_dark_green</item>
+        <item name="colorPrimary">@color/accent_dark_green</item>
+        <item name="colorSecondary">@color/accent_dark_green</item>
+        <item name="colorControlActivated">@color/accent_dark_green</item>
         <item name="cpp_fab_bg">@color/accent_dark_green</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Green</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Green</item>
@@ -128,6 +152,9 @@
     </style>
     <style name="Cpp.Theme.Material.Dark.Purple" parent="Cpp.Theme.Material">
         <item name="colorAccent">@color/accent_dark_purple</item>
+        <item name="colorPrimary">@color/accent_dark_purple</item>
+        <item name="colorSecondary">@color/accent_dark_purple</item>
+        <item name="colorControlActivated">@color/accent_dark_purple</item>
         <item name="cpp_fab_bg">@color/accent_dark_purple</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Purple</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Purple</item>
@@ -142,6 +169,9 @@
     </style>
     <style name="Cpp.Theme.Material.Dark.Amber" parent="Cpp.Theme.Material">
         <item name="colorAccent">@color/accent_dark_amber</item>
+        <item name="colorPrimary">@color/accent_dark_amber</item>
+        <item name="colorSecondary">@color/accent_dark_amber</item>
+        <item name="colorControlActivated">@color/accent_dark_amber</item>
         <item name="cpp_fab_bg">@color/accent_dark_amber</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Amber</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Amber</item>
@@ -156,6 +186,9 @@
     </style>
     <style name="Cpp.Theme.Material.Dark.Red" parent="Cpp.Theme.Material">
         <item name="colorAccent">@color/accent_dark_red</item>
+        <item name="colorPrimary">@color/accent_dark_red</item>
+        <item name="colorSecondary">@color/accent_dark_red</item>
+        <item name="colorControlActivated">@color/accent_dark_red</item>
         <item name="cpp_fab_bg">@color/accent_dark_red</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Red</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Red</item>
@@ -170,6 +203,9 @@
     </style>
     <style name="Cpp.Theme.Material.Dark.Pink" parent="Cpp.Theme.Material">
         <item name="colorAccent">@color/accent_dark_pink</item>
+        <item name="colorPrimary">@color/accent_dark_pink</item>
+        <item name="colorSecondary">@color/accent_dark_pink</item>
+        <item name="colorControlActivated">@color/accent_dark_pink</item>
         <item name="cpp_fab_bg">@color/accent_dark_pink</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Pink</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Pink</item>
@@ -186,6 +222,9 @@
     </style>
     <style name="Cpp.Theme.Material.Amoled.Teal" parent="Cpp.Theme.Material.Black">
         <item name="colorAccent">@color/accent_dark_teal</item>
+        <item name="colorPrimary">@color/accent_dark_teal</item>
+        <item name="colorSecondary">@color/accent_dark_teal</item>
+        <item name="colorControlActivated">@color/accent_dark_teal</item>
         <item name="cpp_fab_bg">@color/accent_dark_teal</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Teal</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Teal</item>
@@ -200,6 +239,9 @@
     </style>
     <style name="Cpp.Theme.Material.Amoled.Green" parent="Cpp.Theme.Material.Black">
         <item name="colorAccent">@color/accent_dark_green</item>
+        <item name="colorPrimary">@color/accent_dark_green</item>
+        <item name="colorSecondary">@color/accent_dark_green</item>
+        <item name="colorControlActivated">@color/accent_dark_green</item>
         <item name="cpp_fab_bg">@color/accent_dark_green</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Green</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Green</item>
@@ -214,6 +256,9 @@
     </style>
     <style name="Cpp.Theme.Material.Amoled.Purple" parent="Cpp.Theme.Material.Black">
         <item name="colorAccent">@color/accent_dark_purple</item>
+        <item name="colorPrimary">@color/accent_dark_purple</item>
+        <item name="colorSecondary">@color/accent_dark_purple</item>
+        <item name="colorControlActivated">@color/accent_dark_purple</item>
         <item name="cpp_fab_bg">@color/accent_dark_purple</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Purple</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Purple</item>
@@ -228,6 +273,9 @@
     </style>
     <style name="Cpp.Theme.Material.Amoled.Amber" parent="Cpp.Theme.Material.Black">
         <item name="colorAccent">@color/accent_dark_amber</item>
+        <item name="colorPrimary">@color/accent_dark_amber</item>
+        <item name="colorSecondary">@color/accent_dark_amber</item>
+        <item name="colorControlActivated">@color/accent_dark_amber</item>
         <item name="cpp_fab_bg">@color/accent_dark_amber</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Amber</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Amber</item>
@@ -242,6 +290,9 @@
     </style>
     <style name="Cpp.Theme.Material.Amoled.Red" parent="Cpp.Theme.Material.Black">
         <item name="colorAccent">@color/accent_dark_red</item>
+        <item name="colorPrimary">@color/accent_dark_red</item>
+        <item name="colorSecondary">@color/accent_dark_red</item>
+        <item name="colorControlActivated">@color/accent_dark_red</item>
         <item name="cpp_fab_bg">@color/accent_dark_red</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Red</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Red</item>
@@ -256,6 +307,9 @@
     </style>
     <style name="Cpp.Theme.Material.Amoled.Cyan" parent="Cpp.Theme.Material.Black">
         <item name="colorAccent">@color/accent_dark_cyan</item>
+        <item name="colorPrimary">@color/accent_dark_cyan</item>
+        <item name="colorSecondary">@color/accent_dark_cyan</item>
+        <item name="colorControlActivated">@color/accent_dark_cyan</item>
         <item name="cpp_fab_bg">@color/accent_dark_cyan</item>
         <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Cyan</item>
         <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Cyan</item>

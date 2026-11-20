@@ -87,7 +87,7 @@ public class HistoryActivity extends BaseActivity {
     }
 
     private void showClearHistoryDialog(final boolean recentHistory) {
-        new AlertDialog.Builder(this, App.getTheme().alertDialogTheme)
+        new AlertDialog.Builder(this)
                 .setTitle(R.string.cpp_clear_history_title)
                 .setMessage(R.string.cpp_clear_history_message)
                 .setPositiveButton(R.string.cpp_clear_history, new DialogInterface.OnClickListener() {

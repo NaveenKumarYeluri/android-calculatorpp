@@ -29,7 +29,7 @@
         android:key="gui.language"
         android:title="@string/cpp_language" />
 
-    <androidx.preference.CheckBoxPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="gui.vibrateOnKeypress"
         android:title="@string/cpp_prefs_vibrate_on_keypress" />
 
@@ -37,16 +37,16 @@
         android:key="gui.theme"
         android:title="@string/cpp_theme" />
 
-    <androidx.preference.CheckBoxPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="gui.highContrast"
         android:title="@string/cpp_high_contrast_text" />
 
-    <androidx.preference.CheckBoxPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="gui.rotateScreen"
         android:title="@string/cpp_prefs_auto_rotate_screen" />
 
-    <androidx.preference.CheckBoxPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="gui.keepScreenOn"
         android:title="@string/cpp_prefs_keep_screen_on" />
 

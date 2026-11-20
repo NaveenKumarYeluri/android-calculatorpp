@@ -168,7 +168,7 @@ public class DisplayFragment extends BaseFragment implements View.OnClickListene
 
     public static void showEvaluationError(@Nonnull Context context,
                                            @Nonnull final String errorMessage) {
-        new AlertDialog.Builder(context, App.getTheme().alertDialogTheme)
+        new AlertDialog.Builder(context)
                 .setPositiveButton(R.string.cpp_cancel, null)
                 .setMessage(errorMessage).create().show();
     }

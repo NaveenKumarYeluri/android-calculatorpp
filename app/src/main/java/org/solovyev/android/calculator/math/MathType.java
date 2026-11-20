@@ -56,7 +56,7 @@ public enum MathType {
         }
     },
 
-    grouping_separator(250, false, false, MathGroupType.number, "'", " ") {
+    grouping_separator(250, false, false, MathGroupType.number, ",", "'", " ") {
         @Override
         public int processToJscl(@Nonnull StringBuilder result, int i, @Nonnull String match) throws ParseException {
             return i;

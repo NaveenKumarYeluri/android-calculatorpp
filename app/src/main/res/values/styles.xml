@@ -22,6 +22,11 @@
 
 <resources>
 
+    <style name="Cpp.ButtonBar.Button" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="rippleColor">?attr/colorAccent</item>
+    </style>
+
     <style name="CppKeyboardButton" parent="BaseCppKeyboardButton"/>
     <style name="BaseCppKeyboardButton">
         <item name="android:layout_width">0dp</item>

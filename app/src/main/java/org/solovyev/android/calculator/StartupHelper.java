@@ -69,7 +69,7 @@ public class StartupHelper {
         }
 
         if (shouldShowRateUsDialog(opened)) {
-            final AlertDialog.Builder builder = new AlertDialog.Builder(activity, App.getTheme().alertDialogTheme);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             builder.setPositiveButton(R.string.cpp_rateus_ok, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

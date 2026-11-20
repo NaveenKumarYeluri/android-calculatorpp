@@ -25,11 +25,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <CheckBoxPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="calculations_calculate_on_fly"
         android:title="@string/p_calculations_calculate_on_fly_title" />
 
-    <CheckBoxPreference
+    <androidx.preference.SwitchPreferenceCompat
         android:key="gui.useBackAsPrevious"
         android:title="@string/c_calc_use_back_button_as_prev_title" />
 

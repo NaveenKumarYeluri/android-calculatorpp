@@ -34,7 +34,7 @@ public class RemovalConfirmationDialog {
     }
 
     private void show() {
-        new AlertDialog.Builder(activity, App.getTheme().alertDialogTheme)
+        new AlertDialog.Builder(activity)
                 .setCancelable(true)
                 .setTitle(R.string.removal_confirmation)
                 .setMessage(activity.getString(message, name))

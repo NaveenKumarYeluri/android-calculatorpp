@@ -28,6 +28,10 @@
         <item name="cpp_editor_bg">@color/amoled_editor_bg</item>
         <item name="cpp_fab_bg">@color/amoled_button_op</item>
         <item name="colorAccent">@color/amoled_accent</item>
+        <item name="colorPrimary">@color/amoled_accent</item>
+        <item name="colorSecondary">@color/amoled_accent</item>
+        <item name="colorControlActivated">@color/amoled_accent</item>
+        <item name="alertDialogTheme">@style/Cpp.Theme.Material.Black.Dialog.Alert</item>
         <item name="cpp_text_color">@color/amoled_text</item>
         <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.TrueBlack.Digit</item>
         <item name="cpp_button_style_control">@style/CppKeyboardButton.Material.TrueBlack.Control</item>
@@ -41,6 +45,9 @@
         <item name="cpp_editor_bg">@color/amoled_editor_bg</item>
         <item name="cpp_fab_bg">@color/amoled_button_op</item>
         <item name="colorAccent">@color/amoled_accent</item>
+        <item name="colorPrimary">@color/amoled_accent</item>
+        <item name="colorSecondary">@color/amoled_accent</item>
+        <item name="colorControlActivated">@color/amoled_accent</item>
         <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.TrueBlack.Digit</item>
         <item name="cpp_button_style_control">@style/CppKeyboardButton.Material.TrueBlack.Control</item>
         <item name="cpp_button_style_control_highlighted">@style/CppKeyboardButton.Material.TrueBlack.Control</item>
@@ -53,6 +60,12 @@
         <item name="cpp_editor_bg">@color/amoled_editor_bg</item>
         <item name="cpp_fab_bg">@color/amoled_button_op</item>
         <item name="colorAccent">@color/amoled_accent</item>
+        <item name="colorPrimary">@color/amoled_accent</item>
+        <item name="colorSecondary">@color/amoled_accent</item>
+        <item name="colorControlActivated">@color/amoled_accent</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
         <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.TrueBlack.Digit</item>
         <item name="cpp_button_style_control">@style/CppKeyboardButton.Material.TrueBlack.Control</item>
         <item name="cpp_button_style_control_highlighted">@style/CppKeyboardButton.Material.TrueBlack.Control</item>

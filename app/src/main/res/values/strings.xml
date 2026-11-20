@@ -59,6 +59,7 @@
     <string name="cpp_theme_amoled_red">True Black • Red</string>
     <string name="cpp_theme_amoled_teal">True Black • Teal</string>
     <string name="cpp_thousands_separator_no">No grouping separator</string>
+    <string name="cpp_thousands_separator_comma">Comma (,)</string>
     <string name="cpp_thousands_separator_apostrophe">Apostrophe (\')</string>
     <string name="cpp_thousands_separator_space">Space ( )</string>
     <string name="cpp_numbering_system">Numbering format</string>

@@ -50,10 +50,9 @@ public abstract class BaseDialogFragment extends DialogFragment implements View.
     @NonNull
     @Override
     public AlertDialog onCreateDialog(@Nullable final Bundle savedInstanceState) {
-        final Preferences.Gui.Theme theme = Preferences.Gui.getTheme(preferences);
         final Context context = getActivity();
         final LayoutInflater inflater = LayoutInflater.from(context);
-        final AlertDialog.Builder b = new AlertDialog.Builder(context, theme.alertDialogTheme);
+        final AlertDialog.Builder b = new AlertDialog.Builder(context);
         final View view = onCreateDialogView(context, inflater, savedInstanceState);
         if (view != null) {
             final int spacing = context.getResources().getDimensionPixelSize(R.dimen.cpp_dialog_spacing);

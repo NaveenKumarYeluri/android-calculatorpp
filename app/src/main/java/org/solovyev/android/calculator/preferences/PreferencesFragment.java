@@ -183,6 +183,8 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
 
     private int separatorName(char separator) {
         switch (separator) {
+            case ',':
+                return R.string.cpp_thousands_separator_comma;
             case '\'':
                 return R.string.cpp_thousands_separator_apostrophe;
             case ' ':

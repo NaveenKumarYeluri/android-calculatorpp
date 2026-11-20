@@ -28,12 +28,20 @@
     </style>
 
     <style name="Cpp.Theme" parent="@style/Theme.Material3.Dark.NoActionBar">
-        <item name="colorPrimary">@color/cpp_text</item>
+        <item name="colorPrimary">@color/cpp_material_accent</item>
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/cpp_material_accent</item>
+        <item name="colorSecondary">@color/cpp_material_accent</item>
+        <item name="colorControlActivated">@color/cpp_material_accent</item>
         <item name="colorError">@color/red_300</item>
 
         <item name="android:windowBackground">@color/cpp_bg</item>
+
+        <item name="alertDialogTheme">@style/Cpp.Theme.Material.Dialog.Alert</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Material</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
 
         <item name="cpp_editor_bg">@color/cpp_editor_bg</item>
         <item name="cpp_fab_bg">@color/blue_900</item>
@@ -53,10 +61,16 @@
     </style>
 
     <style name="Cpp.Theme.Dialog" parent="@style/Theme.Material3.Dark.DialogWhenLarge">
-        <item name="colorPrimary">@color/cpp_text</item>
+        <item name="colorPrimary">?attr/colorAccent</item>
         <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/cpp_material_accent</item>
+        <item name="colorAccent">?attr/colorAccent</item>
+        <item name="colorSecondary">?attr/colorAccent</item>
+        <item name="colorControlActivated">?attr/colorAccent</item>
         <item name="colorError">@color/red_300</item>
+
+        <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
 
         <item name="windowNoTitle">true</item>
         <item name="android:windowNoTitle">true</item>
@@ -64,7 +78,7 @@
         <item name="android:windowIsTranslucent">true</item>
 
         <item name="cpp_editor_bg">@color/cpp_bg</item>
-        <item name="cpp_fab_bg">@color/blue_900</item>
+        <item name="cpp_fab_bg">?attr/colorAccent</item>
         <item name="cpp_text_color">@color/cpp_text</item>
         <item name="cpp_text_color_error">@color/cpp_text_error</item>
         <item name="cpp_toolbar_style">@style/CppToolbar</item>
@@ -73,13 +87,19 @@
     </style>
 
     <style name="Cpp.Theme.Dialog.Alert" parent="@style/Theme.Material3.Dark.Dialog.Alert">
-        <item name="colorPrimary">@color/cpp_text</item>
+        <item name="colorPrimary">?attr/colorAccent</item>
         <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/cpp_material_accent</item>
+        <item name="colorAccent">?attr/colorAccent</item>
+        <item name="colorSecondary">?attr/colorAccent</item>
+        <item name="colorControlActivated">?attr/colorAccent</item>
         <item name="colorError">@color/red_300</item>
 
+        <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
+
         <item name="cpp_editor_bg">@color/cpp_bg</item>
-        <item name="cpp_fab_bg">@color/blue_900</item>
+        <item name="cpp_fab_bg">?attr/colorAccent</item>
         <item name="cpp_text_color">@color/cpp_text</item>
         <item name="cpp_text_color_error">@color/cpp_text_error</item>
         <item name="cpp_toolbar_style">@style/CppToolbar</item>
@@ -93,7 +113,15 @@
         <item name="colorPrimary">@color/teal_400</item>
         <item name="colorPrimaryDark">@color/teal_400</item>
         <item name="colorAccent">@color/teal_400</item>
+        <item name="colorSecondary">@color/teal_400</item>
+        <item name="colorControlActivated">@color/teal_400</item>
         <item name="colorError">@color/red_a700</item>
+
+        <item name="alertDialogTheme">@style/Cpp.Theme.Material.Light.Dialog.Alert</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Material</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
 
         <item name="cpp_editor_bg">@color/cpp_bg_light</item>
         <item name="cpp_fab_bg">@color/teal_400</item>
@@ -106,10 +134,16 @@
     </style>
 
     <style name="Cpp.Theme.Light.Dialog" parent="@style/Theme.Material3.Light.DialogWhenLarge">
-        <item name="colorPrimary">@color/teal_400</item>
-        <item name="colorPrimaryDark">@color/teal_400</item>
-        <item name="colorAccent">@color/teal_400</item>
+        <item name="colorPrimary">?attr/colorAccent</item>
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">?attr/colorAccent</item>
+        <item name="colorSecondary">?attr/colorAccent</item>
+        <item name="colorControlActivated">?attr/colorAccent</item>
         <item name="colorError">@color/red_a700</item>
+
+        <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
 
         <item name="windowNoTitle">true</item>
         <item name="android:windowNoTitle">true</item>
@@ -117,7 +151,7 @@
         <item name="android:windowIsTranslucent">true</item>
 
         <item name="cpp_editor_bg">@color/cpp_bg_light</item>
-        <item name="cpp_fab_bg">@color/teal_400</item>
+        <item name="cpp_fab_bg">?attr/colorAccent</item>
         <item name="cpp_text_color">@color/cpp_text_inverse</item>
         <item name="cpp_text_color_error">@color/cpp_text_inverse_error</item>
         <item name="cpp_toolbar_style">@style/CppToolbar.Light</item>
@@ -126,13 +160,19 @@
     </style>
 
     <style name="Cpp.Theme.Light.Dialog.Alert" parent="@style/Theme.Material3.Light.Dialog.Alert">
-        <item name="colorPrimary">@color/teal_400</item>
-        <item name="colorPrimaryDark">@color/teal_400</item>
-        <item name="colorAccent">@color/teal_400</item>
+        <item name="colorPrimary">?attr/colorAccent</item>
+        <item name="colorPrimaryDark">?attr/colorAccent</item>
+        <item name="colorAccent">?attr/colorAccent</item>
+        <item name="colorSecondary">?attr/colorAccent</item>
+        <item name="colorControlActivated">?attr/colorAccent</item>
         <item name="colorError">@color/red_a700</item>
 
+        <item name="buttonBarPositiveButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Cpp.ButtonBar.Button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Cpp.ButtonBar.Button</item>
+
         <item name="cpp_editor_bg">@color/cpp_bg_light</item>
-        <item name="cpp_fab_bg">@color/teal_400</item>
+        <item name="cpp_fab_bg">?attr/colorAccent</item>
         <item name="cpp_text_color">@color/cpp_text_inverse</item>
         <item name="cpp_text_color_error">@color/cpp_text_inverse_error</item>
         <item name="cpp_toolbar_style">@style/CppToolbar.Light</item>
