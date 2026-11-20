@@ -31,6 +31,7 @@ import jscl.AngleUnit;
 import jscl.JsclMathEngine;
 import jscl.NumeralBase;
 import org.solovyev.android.calculator.ActivityLauncher;
+import org.solovyev.android.calculator.CalculatorApplication;
 import org.solovyev.android.calculator.Engine;
 import org.solovyev.android.calculator.Preferences;
 import org.solovyev.android.calculator.Preferences.Gui.Theme;
