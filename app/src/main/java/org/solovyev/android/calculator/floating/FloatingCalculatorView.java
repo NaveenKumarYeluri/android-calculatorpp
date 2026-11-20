@@ -44,6 +44,7 @@ import android.widget.ImageView;
 
 import org.solovyev.android.calculator.AppModule;
 import org.solovyev.android.calculator.BaseActivity;
+import org.solovyev.android.calculator.Clipboard;
 import org.solovyev.android.calculator.DisplayState;
 import org.solovyev.android.calculator.DisplayView;
 import org.solovyev.android.calculator.Editor;
@@ -302,7 +303,7 @@ public class FloatingCalculatorView {
         }
     }
 
-    static boolean isOverlayPermissionGranted(@NonNull Context context) {
+    public static boolean isOverlayPermissionGranted(@NonNull Context context) {
         try {
             final Context application = context.getApplicationContext();
             final WindowManager wm =

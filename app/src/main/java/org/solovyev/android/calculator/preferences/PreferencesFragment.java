@@ -31,7 +31,6 @@ import jscl.AngleUnit;
 import jscl.JsclMathEngine;
 import jscl.NumeralBase;
 import org.solovyev.android.calculator.ActivityLauncher;
-import org.solovyev.android.calculator.AdView;
 import org.solovyev.android.calculator.Engine;
 import org.solovyev.android.calculator.Preferences;
 import org.solovyev.android.calculator.Preferences.Gui.Theme;
@@ -342,11 +341,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
                 return true;
             }
         });
-    }
-
-    @Nonnull
-    private Checkout getCheckout() {
-        return ((PreferencesActivity) getActivity()).getCheckout();
     }
 
     @Override
