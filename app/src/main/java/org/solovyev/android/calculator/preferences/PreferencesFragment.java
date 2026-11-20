@@ -148,13 +148,13 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
         if (preference == null) {
             return;
         }
-        final midpcalc.Real.NumberingSystem current = Engine.Preferences.Output.numberingSystem.getPreference(preferences);
-        preference.setSummary(current == midpcalc.Real.NumberingSystem.indian ? R.string.cpp_numbering_system_indian : R.string.cpp_numbering_system_international);
+        final jscl.NumberingSystem current = Engine.Preferences.Output.numberingSystem.getPreference(preferences);
+        preference.setSummary(current == jscl.NumberingSystem.indian ? R.string.cpp_numbering_system_indian : R.string.cpp_numbering_system_international);
         preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference p, Object newValue) {
-                final midpcalc.Real.NumberingSystem selected = midpcalc.Real.NumberingSystem.valueOf(String.valueOf(newValue));
-                preference.setSummary(selected == midpcalc.Real.NumberingSystem.indian ? R.string.cpp_numbering_system_indian : R.string.cpp_numbering_system_international);
+                final jscl.NumberingSystem selected = jscl.NumberingSystem.valueOf(String.valueOf(newValue));
+                preference.setSummary(selected == jscl.NumberingSystem.indian ? R.string.cpp_numbering_system_indian : R.string.cpp_numbering_system_international);
                 return true;
             }
         });

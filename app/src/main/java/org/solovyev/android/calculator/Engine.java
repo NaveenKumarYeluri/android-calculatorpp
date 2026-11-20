@@ -388,7 +388,7 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
             public static final StringPreference<Integer> precision = StringPreference.ofTypedValue("engine.output.precision", "5", NumberMapper.of(Integer.class));
             public static final StringPreference<Notation> notation = StringPreference.ofEnum("engine.output.notation", Notation.dec, Notation.class);
             public static final StringPreference<Character> separator = StringPreference.ofTypedValue("engine.output.separator", JsclMathEngine.GROUPING_SEPARATOR_DEFAULT, CharacterMapper.INSTANCE);
-            public static final Preference<midpcalc.Real.NumberingSystem> numberingSystem = StringPreference.ofEnum("engine.output.numberingSystem", midpcalc.Real.NumberingSystem.international, midpcalc.Real.NumberingSystem.class);
+            public static final Preference<jscl.NumberingSystem> numberingSystem = StringPreference.ofEnum("engine.output.numberingSystem", jscl.NumberingSystem.international, jscl.NumberingSystem.class);
         }
     }
 }

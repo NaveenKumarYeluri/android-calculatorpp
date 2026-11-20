@@ -7,6 +7,8 @@ import static midpcalc.Real.NumberFormat.FSE_FIX;
 import static midpcalc.Real.NumberFormat.FSE_NONE;
 import static midpcalc.Real.NumberFormat.FSE_SCI;
 
+import jscl.NumberingSystem;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -58,13 +60,13 @@ public class NumberFormatter {
         this.groupingSeparator = groupingSeparator;
     }
 
-    private Real.NumberingSystem numberingSystem = Real.NumberingSystem.international;
+    private NumberingSystem numberingSystem = NumberingSystem.international;
 
-    public void setNumberingSystem(Real.NumberingSystem numberingSystem) {
-        this.numberingSystem = numberingSystem != null ? numberingSystem : Real.NumberingSystem.international;
+    public void setNumberingSystem(NumberingSystem numberingSystem) {
+        this.numberingSystem = numberingSystem != null ? numberingSystem : NumberingSystem.international;
     }
 
-    public Real.NumberingSystem getNumberingSystem() {
+    public NumberingSystem getNumberingSystem() {
         return numberingSystem;
     }
 

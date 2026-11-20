@@ -311,14 +311,14 @@ public class JsclMathEngine implements MathEngine {
     }
 
     @Nonnull
-    private Real.NumberingSystem numberingSystem = Real.NumberingSystem.international;
+    private NumberingSystem numberingSystem = NumberingSystem.international;
 
-    public void setNumberingSystem(@Nonnull Real.NumberingSystem numberingSystem) {
+    public void setNumberingSystem(@Nonnull NumberingSystem numberingSystem) {
         this.numberingSystem = numberingSystem;
     }
 
     @Nonnull
-    public Real.NumberingSystem getNumberingSystem() {
+    public NumberingSystem getNumberingSystem() {
         return this.numberingSystem;
     }
 }

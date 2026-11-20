@@ -1,5 +1,7 @@
 package midpcalc;
 
+import jscl.NumberingSystem;
+
 /**
  * <b>Java integer implementation of 63-bit precision floating point.</b>
  * <br><i>Version 1.13</i>
@@ -6647,11 +6649,6 @@ public final class Real {
      * protected in any way, the user is responsible for setting the
      * correct values to get a correct result.
      */
-    public enum NumberingSystem {
-        international,
-        indian
-    }
-
     public static class NumberFormat {
         /**
          * Normal output {@linkplain #fse format}
