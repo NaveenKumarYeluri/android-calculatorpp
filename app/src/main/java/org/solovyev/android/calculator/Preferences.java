@@ -152,6 +152,8 @@ public final class Preferences {
         default_theme(0, 0, null),
         metro_blue_theme(R.layout.onscreen_layout, R.layout.widget_layout, Gui.Theme.metro_blue_theme),
         material_theme(R.layout.onscreen_layout_material, R.layout.widget_layout_material, Gui.Theme.material_theme),
+        material_grey_theme(R.layout.onscreen_layout_material_grey, R.layout.widget_layout_material_grey, Gui.Theme.material_grey_theme),
+        material_black_theme(R.layout.onscreen_layout_material_true_black, R.layout.widget_layout_material_true_black, Gui.Theme.material_black_theme),
         material_light_theme(R.layout.onscreen_layout_material_light, R.layout.widget_layout_material_light, Gui.Theme.material_light_theme, true);
 
         @LayoutRes
@@ -290,15 +292,10 @@ public final class Preferences {
             metro_blue_theme(R.string.cpp_theme_metro_blue, R.style.Cpp_Theme_Metro_Blue, R.style.Cpp_Theme_Metro_Blue_Calculator, R.style.Cpp_Theme_Wizard, R.style.Cpp_Theme_Metro_Blue_Dialog, R.style.Cpp_Theme_Material_Dialog_Alert),
             metro_purple_theme(R.string.p_metro_purple_theme, R.style.Cpp_Theme_Metro_Purple, R.style.Cpp_Theme_Metro_Purple_Calculator, R.style.Cpp_Theme_Wizard, R.style.Cpp_Theme_Metro_Purple_Dialog, R.style.Cpp_Theme_Material_Dialog_Alert),
             metro_green_theme(R.string.p_metro_green_theme, R.style.Cpp_Theme_Metro_Green, R.style.Cpp_Theme_Metro_Green_Calculator, R.style.Cpp_Theme_Wizard, R.style.Cpp_Theme_Metro_Green_Dialog, R.style.Cpp_Theme_Material_Dialog_Alert),
-            material_theme(R.string.cpp_theme_dark, R.style.Cpp_Theme_Material, R.style.Cpp_Theme_Material_Calculator),
-            material_black_theme(R.string.cpp_theme_black, R.style.Cpp_Theme_Material_Black, R.style.Cpp_Theme_Material_Black_Calculator) {
-                @NonNull
-                @Override
-                public String getName(@NonNull Context context) {
-                    return context.getString(name, material_theme.getName(context));
-                }
-            },
-            material_light_theme(R.string.cpp_theme_light, R.style.Cpp_Theme_Material_Light, R.style.Cpp_Theme_Material_Light_Calculator, R.style.Cpp_Theme_Wizard_Light, R.style.Cpp_Theme_Material_Light_Dialog, R.style.Cpp_Theme_Material_Light_Dialog_Alert);
+            material_theme(R.string.cpp_theme_black, R.style.Cpp_Theme_Material, R.style.Cpp_Theme_Material_Calculator),
+            material_grey_theme(R.string.cpp_theme_grey, R.style.Cpp_Theme_Material_Grey, R.style.Cpp_Theme_Material_Grey_Calculator),
+            material_black_theme(R.string.cpp_theme_true_black, R.style.Cpp_Theme_Material_Black, R.style.Cpp_Theme_Material_Black_Calculator),
+            material_light_theme(R.string.cpp_theme_white, R.style.Cpp_Theme_Material_Light, R.style.Cpp_Theme_Material_Light_Calculator, R.style.Cpp_Theme_Wizard_Light, R.style.Cpp_Theme_Material_Light_Dialog, R.style.Cpp_Theme_Material_Light_Dialog_Alert);
 
             private static final SparseArray<TextColor> textColors = new SparseArray<>();
 

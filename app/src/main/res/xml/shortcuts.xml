@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="floating_calculator"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher_window"
+        android:shortcutShortLabel="@string/cpp_app_name_on_screen"
+        android:shortcutLongLabel="@string/open_onscreen_calculator">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.naveenkumar.calculatorpp"
+            android:targetClass="org.solovyev.android.calculator.floating.FloatingCalculatorActivity" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="history"
+        android:enabled="true"
+        android:icon="@drawable/ic_history_white_24dp"
+        android:shortcutShortLabel="@string/c_history"
+        android:shortcutLongLabel="@string/c_history">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.naveenkumar.calculatorpp"
+            android:targetClass="org.solovyev.android.calculator.history.HistoryActivity" />
+    </shortcut>
+</shortcuts>

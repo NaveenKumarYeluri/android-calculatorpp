@@ -29,6 +29,10 @@
     <string name="p_metro_green_theme">Metro Green</string>
     <string name="p_metro_purple_theme">Metro Purple</string>
     <string name="cpp_theme_app">App theme</string>
+    <string name="cpp_theme_white">White</string>
+    <string name="cpp_theme_black">Black</string>
+    <string name="cpp_theme_grey">Grey</string>
+    <string name="cpp_theme_true_black">True Black (AMOLED)</string>
     <string name="cpp_thousands_separator_no">No grouping separator</string>
     <string name="cpp_thousands_separator_apostrophe">Apostrophe (\')</string>
     <string name="cpp_thousands_separator_space">Space ( )</string>
@@ -36,6 +40,7 @@
     <string name="c_use">Use</string>
     <string name="c_copy_expression">Copy expression</string>
     <string name="c_copy_result">Copy result</string>
+    <string name="c_result_copied">Result copied to clipboard</string>
     <string name="c_history_expression">Value</string>
     <string name="c_history_comment">Comment</string>
     <string name="cpp_history_tab_saved">Saved</string>

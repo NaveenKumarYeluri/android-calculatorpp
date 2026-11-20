@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CppKeyboardButton.Material.Grey.Digit" parent="CppKeyboardButton">
+        <item name="android:background">@drawable/material_button_grey</item>
+        <item name="android:textColor">#f1f3f4</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Grey.Control" parent="CppKeyboardButton">
+        <item name="android:background">@drawable/material_button_grey_control</item>
+        <item name="android:textColor">#e8eaed</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Grey.Operation" parent="CppKeyboardButton">
+        <item name="android:background">@drawable/material_button_grey_op</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="Cpp.Theme.Material.Grey" parent="Cpp.Theme">
+        <item name="android:windowBackground">@color/grey_theme_bg</item>
+        <item name="cpp_editor_bg">@color/grey_theme_editor_bg</item>
+        <item name="cpp_bg">@color/grey_theme_bg</item>
+        <item name="cpp_fab_bg">@color/grey_theme_button_op</item>
+        <item name="colorAccent">@color/grey_theme_accent</item>
+        <item name="cpp_text_color">#f1f3f4</item>
+        <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.Grey.Digit</item>
+        <item name="cpp_button_style_control">@style/CppKeyboardButton.Material.Grey.Control</item>
+        <item name="cpp_button_style_control_highlighted">@style/CppKeyboardButton.Material.Grey.Control</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Grey.Operation</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Grey.Operation</item>
+    </style>
+
+    <style name="Cpp.Theme.Material.Grey.Dialog" parent="Cpp.Theme.Dialog">
+        <item name="android:windowBackground">@color/grey_theme_bg</item>
+        <item name="cpp_editor_bg">@color/grey_theme_editor_bg</item>
+        <item name="cpp_bg">@color/grey_theme_bg</item>
+        <item name="cpp_fab_bg">@color/grey_theme_button_op</item>
+        <item name="colorAccent">@color/grey_theme_accent</item>
+        <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.Grey.Digit</item>
+        <item name="cpp_button_style_control">@style/CppKeyboardButton.Material.Grey.Control</item>
+        <item name="cpp_button_style_control_highlighted">@style/CppKeyboardButton.Material.Grey.Control</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Grey.Operation</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Grey.Operation</item>
+    </style>
+
+    <style name="Cpp.Theme.Material.Grey.Dialog.Alert" parent="Cpp.Theme.Dialog.Alert">
+        <item name="android:windowBackground">@color/grey_theme_bg</item>
+        <item name="cpp_editor_bg">@color/grey_theme_editor_bg</item>
+        <item name="cpp_bg">@color/grey_theme_bg</item>
+        <item name="cpp_fab_bg">@color/grey_theme_button_op</item>
+        <item name="colorAccent">@color/grey_theme_accent</item>
+        <item name="cpp_button_style_digit">@style/CppKeyboardButton.Material.Grey.Digit</item>
+        <item name="cpp_button_style_control">@style/CppKeyboardButton.Material.Grey.Control</item>
+        <item name="cpp_button_style_control_highlighted">@style/CppKeyboardButton.Material.Grey.Control</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Grey.Operation</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Grey.Operation</item>
+    </style>
+
+    <style name="Cpp.Theme.Material.Grey.Calculator" parent="Cpp.Theme.Material.Grey">
+        <item name="android:windowBackground">@color/grey_theme_editor_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+</resources>

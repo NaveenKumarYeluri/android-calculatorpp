@@ -154,7 +154,15 @@
     </style>
 
     <style name="CppMain.Onscreen.Light" parent="CppMain.Onscreen">
-        <item name="android:background">@color/cpp_bg_light</item>
+        <item name="android:background">@color/white_theme_bg</item>
+    </style>
+
+    <style name="CppMain.Onscreen.Grey" parent="CppMain.Onscreen">
+        <item name="android:background">@color/grey_theme_editor_bg</item>
+    </style>
+
+    <style name="CppMain.Onscreen.TrueBlack" parent="CppMain.Onscreen">
+        <item name="android:background">@color/amoled_black</item>
     </style>
 
     <style name="WizardLabel.Last" parent="WizardLabel">

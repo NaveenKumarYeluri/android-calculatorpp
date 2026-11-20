@@ -69,4 +69,38 @@
 
     <color name="drag_text_inverse">@color/cpp_text_inverse</color>
     <color name="drag_button_text">@color/cpp_button_text</color>
+
+    <!-- True Black (AMOLED) Palette -->
+    <color name="amoled_black">#000000</color>
+    <color name="amoled_editor_bg">#000000</color>
+    <color name="amoled_button_digit">#0a0a0a</color>
+    <color name="amoled_button_digit_pressed">#222222</color>
+    <color name="amoled_button_control">#141414</color>
+    <color name="amoled_button_control_pressed">#2a2a2a</color>
+    <color name="amoled_button_op">#1565c0</color>
+    <color name="amoled_button_op_pressed">#1e88e5</color>
+    <color name="amoled_accent">#00e5ff</color>
+
+    <!-- Grey (Material Neutral) Palette -->
+    <color name="grey_theme_bg">#2b2d30</color>
+    <color name="grey_theme_editor_bg">#1e1f22</color>
+    <color name="grey_theme_button_digit">#35373c</color>
+    <color name="grey_theme_button_digit_pressed">#43454b</color>
+    <color name="grey_theme_button_control">#3e4147</color>
+    <color name="grey_theme_button_control_pressed">#4c4f56</color>
+    <color name="grey_theme_button_op">#475569</color>
+    <color name="grey_theme_button_op_pressed">#64748b</color>
+    <color name="grey_theme_accent">#60a5fa</color>
+
+    <!-- White (Material Light) Palette -->
+    <color name="white_theme_bg">#f8f9fa</color>
+    <color name="white_theme_editor_bg">#ffffff</color>
+    <color name="white_theme_button_digit">#f1f3f4</color>
+    <color name="white_theme_button_digit_pressed">#e2e4e7</color>
+    <color name="white_theme_button_control">#e8eaed</color>
+    <color name="white_theme_button_control_pressed">#d8dadf</color>
+    <color name="white_theme_button_op">#00897b</color>
+    <color name="white_theme_button_op_pressed">#00796b</color>
+    <color name="white_theme_text">#202124</color>
+    <color name="white_theme_accent">#009688</color>
 </resources>

@@ -39,10 +39,6 @@ import org.solovyev.android.calculator.R;
 import org.solovyev.android.calculator.feedback.FeedbackReporter;
 import org.solovyev.android.calculator.language.Language;
 import org.solovyev.android.calculator.language.Languages;
-import org.solovyev.android.checkout.BillingRequests;
-import org.solovyev.android.checkout.Checkout;
-import org.solovyev.android.checkout.ProductTypes;
-import org.solovyev.android.checkout.RequestListener;
 import org.solovyev.android.prefs.StringPreference;
 import org.solovyev.android.wizard.Wizards;
 import org.solovyev.common.text.CharacterMapper;
@@ -52,8 +48,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
     @Nonnull
     private static String ARG_PREFERENCES = "preferences";
 
-    @Nullable
-    private AdView adView;
     @Inject
     SharedPreferences preferences;
     @Inject
@@ -129,7 +123,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
             prepareIntroduction();
             prepareReportBug();
             prepareAbout();
-            prepareSupportProject();
             prepareMode();
             prepareAngles();
             prepareRadix();
@@ -144,28 +137,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
 
         prepareLanguagePreference(preference);
         prepareThemePreference(preference);
-
-        getCheckout().whenReady(new Checkout.EmptyListener() {
-            @Override
-            public void onReady(@Nonnull BillingRequests requests) {
-                requests.isPurchased(ProductTypes.IN_APP, "ad_free", new RequestListener<Boolean>() {
-                    @Override
-                    public void onSuccess(@Nonnull Boolean purchased) {
-                        final Preference supportProject = findPreference("prefs.supportProject");
-                        if (supportProject != null) {
-                            supportProject.setEnabled(!purchased);
-                            supportProject.setSelectable(!purchased);
-                        }
-                        onShowAd(!purchased);
-                    }
-
-                    @Override
-                    public void onError(int i, @Nonnull Exception e) {
-                        onShowAd(false);
-                    }
-                });
-            }
-        });
     }
 
     private void prepareReportBug() {
@@ -178,19 +149,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
             }
         });
 
-    }
-
-    private void prepareSupportProject() {
-        final Preference supportProject = findPreference("prefs.supportProject");
-        supportProject.setEnabled(false);
-        supportProject.setSelectable(false);
-        supportProject.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                startActivity(new Intent(getActivity(), PurchaseDialogActivity.class));
-                return true;
-            }
-        });
     }
 
     private void prepareScreens() {
@@ -332,9 +290,10 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
         final ListPreference theme = (ListPreference) getPreferenceManager().findPreference(Preferences.Gui.theme.getKey());
         final FragmentActivity context = getActivity();
         populate(theme,
-                Theme.material_theme,
-                Theme.material_black_theme,
                 Theme.material_light_theme,
+                Theme.material_theme,
+                Theme.material_grey_theme,
+                Theme.material_black_theme,
                 Theme.metro_blue_theme,
                 Theme.metro_green_theme,
                 Theme.metro_purple_theme);
@@ -410,57 +369,9 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        if (adView != null) {
-            adView.resume();
-        }
-    }
-
-    @Override
-    public void onPause() {
-        if (adView != null) {
-            adView.pause();
-        }
-        super.onPause();
-    }
-
-    @Override
-    public void onDestroyView() {
-        if (adView != null) {
-            adView.destroy();
-        }
-        super.onDestroyView();
-    }
-
-    @Override
     public void onDestroy() {
         bus.unregister(this);
         preferences.unregisterOnSharedPreferenceChangeListener(this);
         super.onDestroy();
     }
-
-
-    protected void onShowAd(boolean show) {
-        if (getView() == null) {
-            return;
-        }
-
-        final View root = getView();
-        if (!(root instanceof ViewGroup)) return;
-
-        final ViewGroup container = (ViewGroup) root;
-        if (show) {
-            if (adView != null) return;
-            adView = new AdView(getActivity());
-            adView.show();
-            container.addView(adView);
-        } else {
-            if (adView == null) return;
-            container.removeView(adView);
-            adView.hide();
-            adView = null;
-        }
-    }
-
 }

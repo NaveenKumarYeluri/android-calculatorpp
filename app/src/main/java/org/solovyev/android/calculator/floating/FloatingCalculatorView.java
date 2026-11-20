@@ -259,6 +259,8 @@ public class FloatingCalculatorView {
     SharedPreferences preferences;
     @Inject
     Typeface typeface;
+    @Inject
+    Clipboard clipboard;
     @Named(AppModule.PREFS_FLOATING)
     @Inject
     SharedPreferences myPreferences;
@@ -287,7 +289,9 @@ public class FloatingCalculatorView {
         final Preferences.Gui.Theme appTheme =
                 Preferences.Gui.theme.getPreferenceNoError(preferences);
         final Preferences.SimpleTheme resolvedTheme = theme.resolveThemeFor(appTheme);
-        this.context = new ContextThemeWrapper(context, resolvedTheme.light ? R.style.Cpp_Theme_Light : R.style.Cpp_Theme);
+        final Preferences.Gui.Theme targetTheme = resolvedTheme.getAppTheme() != null ? resolvedTheme.getAppTheme() : appTheme;
+        final int themeResId = targetTheme != null ? targetTheme.theme : (resolvedTheme.light ? R.style.Cpp_Theme_Light : R.style.Cpp_Theme);
+        this.context = new ContextThemeWrapper(context, themeResId);
         this.root = View.inflate(this.context, theme.getOnscreenLayout(appTheme), null);
         BaseActivity.fixFonts(this.root, typeface);
         final State persistedState = State.fromPrefs(myPreferences);
@@ -392,6 +396,18 @@ public class FloatingCalculatorView {
         content = root.findViewById(R.id.onscreen_content);
 
         displayView = (DisplayView) root.findViewById(R.id.calculator_display);
+        displayView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                final CharSequence text = displayView.getText();
+                if (!android.text.TextUtils.isEmpty(text)) {
+                    clipboard.setText(text);
+                    android.widget.Toast.makeText(context, R.string.c_result_copied, android.widget.Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         editorView = (EditorView) root.findViewById(R.id.calculator_editor);
         editorView.setEditor(editor);

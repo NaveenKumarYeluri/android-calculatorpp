@@ -23,14 +23,18 @@
 <resources>
     <string-array name="cpp_simple_theme_names">
         <item>@string/cpp_theme_app</item>
-        <item>@string/cpp_theme_dark</item>
-        <item>@string/cpp_theme_light</item>
+        <item>@string/cpp_theme_white</item>
+        <item>@string/cpp_theme_black</item>
+        <item>@string/cpp_theme_grey</item>
+        <item>@string/cpp_theme_true_black</item>
         <item>@string/cpp_theme_metro_blue</item>
     </string-array>
     <string-array name="cpp_simple_themes" translatable="false">
         <item>default_theme</item>
-        <item>material_theme</item>
         <item>material_light_theme</item>
+        <item>material_theme</item>
+        <item>material_grey_theme</item>
+        <item>material_black_theme</item>
         <item>metro_blue_theme</item>
     </string-array>
 
