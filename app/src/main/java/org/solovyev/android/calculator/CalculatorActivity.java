@@ -83,6 +83,9 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            getSplashScreen().setOnExitAnimationListener(android.window.SplashScreenView::remove);
+        }
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null) {
@@ -241,9 +244,6 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
                 return true;
             } else if (itemId == R.id.menu_conversion_tool) {
                 ConverterFragment.show(CalculatorActivity.this);
-                return true;
-            } else if (itemId == R.id.menu_about) {
-                launcher.showAbout();
                 return true;
             } else if (itemId == R.id.menu_mode_engineer) {
                 Preferences.Gui.mode.putPreference(preferences, Preferences.Gui.Mode.engineer);

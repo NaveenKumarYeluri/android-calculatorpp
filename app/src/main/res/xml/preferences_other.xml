@@ -30,10 +30,6 @@
         android:title="@string/p_calculations_calculate_on_fly_title" />
 
     <CheckBoxPreference
-        android:key="gui.showReleaseNotes"
-        android:title="@string/c_calc_show_release_notes_title" />
-
-    <CheckBoxPreference
         android:key="gui.useBackAsPrevious"
         android:title="@string/c_calc_use_back_button_as_prev_title" />
 

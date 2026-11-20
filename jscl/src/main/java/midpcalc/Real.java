@@ -6430,7 +6430,7 @@ public final class Real {
                         pointPos = tmp.exponent;
                         precision += tmp.exponent;
                         if (tmp.exponent > 0)
-                            width -= (tmp.exponent + prefix) / digitsPerThousand;
+                            width -= countSeparators(tmp.exponent + prefix, format);
                         if (format.removePoint && tmp.exponent == width - prefix) {
                             // Add 1 for the decimal point that will be removed
                             width++;
@@ -6476,7 +6476,7 @@ public final class Real {
         // Add fractional part
         for (int i = 0; i < precision; i++) {
             buf.append(hexChar.charAt(digits[i]));
-            if (pointPos > 0 && pointPos % digitsPerThousand == 0)
+            if (pointPos > 0 && isGroupingNeeded(pointPos, format))
                 buf.append(format.thousand);
             if (pointPos == 0)
                 buf.append(format.point);
@@ -6524,6 +6524,26 @@ public final class Real {
             default:
                 return 3;
         }
+    }
+
+    private boolean isGroupingNeeded(int pointPos, NumberFormat format) {
+        if (format.thousand == 0) {
+            return false;
+        }
+        if (format.numberingSystem == NumberingSystem.indian && format.base == 10) {
+            return pointPos == 3 || (pointPos > 3 && (pointPos % 2 == 1));
+        }
+        return pointPos % digitsPerThousand(format) == 0;
+    }
+
+    private int countSeparators(int digits, NumberFormat format) {
+        if (format.thousand == 0 || digits <= 0) {
+            return 0;
+        }
+        if (format.numberingSystem == NumberingSystem.indian && format.base == 10) {
+            return digits >= 4 ? 1 + (digits - 4) / 2 : 0;
+        }
+        return digits / digitsPerThousand(format);
     }
 
     /**
@@ -6627,6 +6647,11 @@ public final class Real {
      * protected in any way, the user is responsible for setting the
      * correct values to get a correct result.
      */
+    public enum NumberingSystem {
+        international,
+        indian
+    }
+
     public static class NumberFormat {
         /**
          * Normal output {@linkplain #fse format}
@@ -6786,6 +6811,7 @@ public final class Real {
          * only for the presentation of numbers.
          */
         public char thousand = 0;
+        public NumberingSystem numberingSystem = NumberingSystem.international;
         /**
          * The alignment of the output string within a field of {@link
          * #maxwidth} characters. The default value is

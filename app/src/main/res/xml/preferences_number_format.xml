@@ -38,6 +38,12 @@
         android:key="engine.output.separator"
         android:title="@string/cpp_thousands_separator" />
 
+    <androidx.preference.ListPreference
+        android:entries="@array/cpp_numbering_system_names"
+        android:entryValues="@array/cpp_numbering_systems"
+        android:key="engine.output.numberingSystem"
+        android:title="@string/cpp_numbering_system" />
+
     <org.solovyev.android.calculator.preferences.NumberFormatExamplesPreference
         android:key="numberFormat.examples"
         android:selectable="false"

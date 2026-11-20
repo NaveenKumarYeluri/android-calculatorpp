@@ -34,7 +34,9 @@ public class NumberFormatExamplesPreference extends Preference {
         examples.append("      √2 = ").append(engine.format(Math.sqrt(2d))).append("\n");
         examples.append("\n");
         examples.append("    1000 = ").append(engine.format(1000d)).append("\n");
+        examples.append("  100000 = ").append(engine.format(100000d)).append("\n");
         examples.append(" 1000000 = ").append(engine.format(1000000d)).append("\n");
+        examples.append("10000000 = ").append(engine.format(10000000d)).append("\n");
         examples.append("   11^10 = ").append(engine.format(Math.pow(11d, 10))).append("\n");
         examples.append("   10^24 = ").append(engine.format(Math.pow(10d, 24))).append("\n");
         examples.append("\n");

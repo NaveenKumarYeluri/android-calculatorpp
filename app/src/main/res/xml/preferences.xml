@@ -71,22 +71,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="category-help"
-        android:title="@string/cpp_help">
-
-        <Preference
-            android:key="prefs.introduction"
-            android:title="@string/cpp_introduction" />
-
-        <Preference
-            android:key="prefs.reportBug"
-            android:title="@string/cpp_report_problem" />
-
-        <Preference
-            android:key="prefs.about"
-            android:title="@string/cpp_about" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>

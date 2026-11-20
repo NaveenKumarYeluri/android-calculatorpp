@@ -119,6 +119,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
         final int themeId = theme.getThemeFor(this);
         final int newThemeId = newTheme.getThemeFor(this);
         if (themeId != newThemeId) {
+            CalculatorApplication.applyDayNightMode(preferences);
             App.restartActivity(this);
             return true;
         }
@@ -210,10 +211,11 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
         theme = Preferences.Gui.getTheme(preferences);
         setTheme(theme.getThemeFor(this));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
-            final int scrimColor = theme.getScrimColorFor(this);
-            EdgeToEdge.enable(this, theme.light ? SystemBarStyle.light(scrimColor, scrimColor) : SystemBarStyle.dark(scrimColor));
-        }
+        final int bgRes = theme.light ? R.color.cpp_bg_light : (theme.isAmoled() ? R.color.amoled_black : R.color.cpp_editor_bg);
+        getWindow().setBackgroundDrawableResource(bgRes);
+
+        final int scrimColor = theme.getScrimColorFor(this);
+        EdgeToEdge.enable(this, theme.light ? SystemBarStyle.light(scrimColor, scrimColor) : SystemBarStyle.dark(scrimColor));
 
         mode = Preferences.Gui.getMode(preferences);
         language = languages.getCurrent();

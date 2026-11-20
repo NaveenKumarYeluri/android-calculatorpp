@@ -42,6 +42,8 @@ public interface MathContext {
 
     void setGroupingSeparator(char separator);
 
+    void setNumberingSystem(@Nonnull midpcalc.Real.NumberingSystem numberingSystem);
+
     @Nonnull
     String format(double value);
 

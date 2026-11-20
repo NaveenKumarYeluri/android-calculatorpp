@@ -119,9 +119,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
         final int preference = getArguments().getInt(ARG_PREFERENCES);
         if (preference == R.xml.preferences) {
             prepareScreens();
-            prepareIntroduction();
-            prepareReportBug();
-            prepareAbout();
             prepareMode();
             prepareAngles();
             prepareRadix();
@@ -129,6 +126,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
             prepareListPreference(Engine.Preferences.Output.notation, Engine.Notation.class);
             preparePrecisionPreference();
             prepareSeparatorPreference();
+            prepareNumberingSystemPreference();
             prepareNumberFormatExamplesPreference();
         } else if (preference == R.xml.preferences_onscreen) {
             updateFloatingCalculatorPreferences();
@@ -138,18 +136,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
         prepareThemePreference(preference);
     }
 
-    private void prepareReportBug() {
-        final Preference reportBug = findPreference("prefs.reportBug");
-        reportBug.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                feedbackReporter.report();
-                return true;
-            }
-        });
-
-    }
-
     private void prepareScreens() {
         final SparseArray<PreferencesActivity.PrefDef> preferences = PreferencesActivity.getPreferenceDefs();
         for (int i = 0; i < preferences.size(); i++) {
@@ -157,23 +143,18 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
         }
     }
 
-    private void prepareIntroduction() {
-        final Preference introduction = findPreference("prefs.introduction");
-        introduction.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+    private void prepareNumberingSystemPreference() {
+        final ListPreference preference = (ListPreference) getPreferenceManager().findPreference(Engine.Preferences.Output.numberingSystem.getKey());
+        if (preference == null) {
+            return;
+        }
+        final midpcalc.Real.NumberingSystem current = Engine.Preferences.Output.numberingSystem.getPreference(preferences);
+        preference.setSummary(current == midpcalc.Real.NumberingSystem.indian ? R.string.cpp_numbering_system_indian : R.string.cpp_numbering_system_international);
+        preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
-            public boolean onPreferenceClick(Preference preference) {
-                startWizard(wizards, DEFAULT_WIZARD_FLOW, getActivity());
-                return true;
-            }
-        });
-    }
-
-    private void prepareAbout() {
-        final Preference about = findPreference("prefs.about");
-        about.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                launcher.showAbout();
+            public boolean onPreferenceChange(Preference p, Object newValue) {
+                final midpcalc.Real.NumberingSystem selected = midpcalc.Real.NumberingSystem.valueOf(String.valueOf(newValue));
+                preference.setSummary(selected == midpcalc.Real.NumberingSystem.indian ? R.string.cpp_numbering_system_indian : R.string.cpp_numbering_system_international);
                 return true;
             }
         });
@@ -289,19 +270,39 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
         final ListPreference theme = (ListPreference) getPreferenceManager().findPreference(Preferences.Gui.theme.getKey());
         final FragmentActivity context = getActivity();
         populate(theme,
+                // White background themes with accents
                 Theme.material_light_theme,
+                Theme.material_light_blue,
+                Theme.material_light_green,
+                Theme.material_light_purple,
+                Theme.material_light_amber,
+                Theme.material_light_red,
+                Theme.material_light_pink,
+                // Black background themes with accents
                 Theme.material_theme,
-                Theme.material_grey_theme,
+                Theme.material_dark_teal,
+                Theme.material_dark_green,
+                Theme.material_dark_purple,
+                Theme.material_dark_amber,
+                Theme.material_dark_red,
+                Theme.material_dark_pink,
+                // True Black (AMOLED) themes with accents
                 Theme.material_black_theme,
-                Theme.metro_blue_theme,
-                Theme.metro_green_theme,
-                Theme.metro_purple_theme);
+                Theme.material_amoled_cyan,
+                Theme.material_amoled_teal,
+                Theme.material_amoled_green,
+                Theme.material_amoled_purple,
+                Theme.material_amoled_amber,
+                Theme.material_amoled_red,
+                // Grey
+                Theme.material_grey_theme);
         theme.setSummary(Preferences.Gui.getTheme(preferences).getName(context));
         theme.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 final Theme newTheme = Theme.valueOf((String) newValue);
                 theme.setSummary(newTheme.getName(context));
+                CalculatorApplication.applyDayNightMode(preferences);
                 return true;
             }
         });

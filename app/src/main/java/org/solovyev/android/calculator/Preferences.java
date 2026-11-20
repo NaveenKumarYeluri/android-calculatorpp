@@ -205,19 +205,15 @@ public final class Preferences {
         @Nonnull
         private SimpleTheme lookUpThemeFor(@Nonnull Gui.Theme appTheme) {
             Check.isTrue(this == default_theme);
-            // find direct match
-            for (SimpleTheme theme : values()) {
-                if (theme.appTheme == appTheme) {
-                    return theme;
-                }
+            if (appTheme.light) {
+                return material_light_theme;
             }
-
-            // for metro themes return metro theme
-            if (appTheme == Gui.Theme.metro_green_theme || appTheme == Gui.Theme.metro_purple_theme) {
-                return metro_blue_theme;
+            if (appTheme.isAmoled()) {
+                return material_black_theme;
             }
-
-            // for old themes return dark material
+            if (appTheme == Gui.Theme.material_grey_theme) {
+                return material_grey_theme;
+            }
             return material_theme;
         }
 
@@ -286,16 +282,43 @@ public final class Preferences {
 
         public enum Theme implements PreferenceEntry {
 
-            default_theme(R.style.Cpp_Theme_Gray),
-            violet_theme(R.style.Cpp_Theme_Violet),
-            light_blue_theme(R.style.Cpp_Theme_Blue),
-            metro_blue_theme(R.string.cpp_theme_metro_blue, R.style.Cpp_Theme_Metro_Blue, R.style.Cpp_Theme_Metro_Blue_Calculator, R.style.Cpp_Theme_Wizard, R.style.Cpp_Theme_Metro_Blue_Dialog, R.style.Cpp_Theme_Material_Dialog_Alert),
-            metro_purple_theme(R.string.p_metro_purple_theme, R.style.Cpp_Theme_Metro_Purple, R.style.Cpp_Theme_Metro_Purple_Calculator, R.style.Cpp_Theme_Wizard, R.style.Cpp_Theme_Metro_Purple_Dialog, R.style.Cpp_Theme_Material_Dialog_Alert),
-            metro_green_theme(R.string.p_metro_green_theme, R.style.Cpp_Theme_Metro_Green, R.style.Cpp_Theme_Metro_Green_Calculator, R.style.Cpp_Theme_Wizard, R.style.Cpp_Theme_Metro_Green_Dialog, R.style.Cpp_Theme_Material_Dialog_Alert),
-            material_theme(R.string.cpp_theme_black, R.style.Cpp_Theme_Material, R.style.Cpp_Theme_Material_Calculator),
-            material_grey_theme(R.string.cpp_theme_grey, R.style.Cpp_Theme_Material_Grey, R.style.Cpp_Theme_Material_Grey_Calculator),
-            material_black_theme(R.string.cpp_theme_true_black, R.style.Cpp_Theme_Material_Black, R.style.Cpp_Theme_Material_Black_Calculator),
-            material_light_theme(R.string.cpp_theme_white, R.style.Cpp_Theme_Material_Light, R.style.Cpp_Theme_Material_Light_Calculator, R.style.Cpp_Theme_Wizard_Light, R.style.Cpp_Theme_Material_Light_Dialog, R.style.Cpp_Theme_Material_Light_Dialog_Alert);
+            // White Themes (Light)
+            material_light_theme(R.string.cpp_theme_white_teal, R.style.Cpp_Theme_Material_Light, R.style.Cpp_Theme_Material_Light_Calculator, true, false),
+            material_light_blue(R.string.cpp_theme_white_blue, R.style.Cpp_Theme_Material_Light_Blue, R.style.Cpp_Theme_Material_Light_Blue_Calculator, true, false),
+            material_light_green(R.string.cpp_theme_white_green, R.style.Cpp_Theme_Material_Light_Green, R.style.Cpp_Theme_Material_Light_Green_Calculator, true, false),
+            material_light_purple(R.string.cpp_theme_white_purple, R.style.Cpp_Theme_Material_Light_Purple, R.style.Cpp_Theme_Material_Light_Purple_Calculator, true, false),
+            material_light_amber(R.string.cpp_theme_white_amber, R.style.Cpp_Theme_Material_Light_Amber, R.style.Cpp_Theme_Material_Light_Amber_Calculator, true, false),
+            material_light_red(R.string.cpp_theme_white_red, R.style.Cpp_Theme_Material_Light_Red, R.style.Cpp_Theme_Material_Light_Red_Calculator, true, false),
+            material_light_pink(R.string.cpp_theme_white_pink, R.style.Cpp_Theme_Material_Light_Pink, R.style.Cpp_Theme_Material_Light_Pink_Calculator, true, false),
+
+            // Black Themes (Dark)
+            material_theme(R.string.cpp_theme_black_blue, R.style.Cpp_Theme_Material, R.style.Cpp_Theme_Material_Calculator, false, false),
+            material_dark_teal(R.string.cpp_theme_black_teal, R.style.Cpp_Theme_Material_Dark_Teal, R.style.Cpp_Theme_Material_Dark_Teal_Calculator, false, false),
+            material_dark_green(R.string.cpp_theme_black_green, R.style.Cpp_Theme_Material_Dark_Green, R.style.Cpp_Theme_Material_Dark_Green_Calculator, false, false),
+            material_dark_purple(R.string.cpp_theme_black_purple, R.style.Cpp_Theme_Material_Dark_Purple, R.style.Cpp_Theme_Material_Dark_Purple_Calculator, false, false),
+            material_dark_amber(R.string.cpp_theme_black_amber, R.style.Cpp_Theme_Material_Dark_Amber, R.style.Cpp_Theme_Material_Dark_Amber_Calculator, false, false),
+            material_dark_red(R.string.cpp_theme_black_red, R.style.Cpp_Theme_Material_Dark_Red, R.style.Cpp_Theme_Material_Dark_Red_Calculator, false, false),
+            material_dark_pink(R.string.cpp_theme_black_pink, R.style.Cpp_Theme_Material_Dark_Pink, R.style.Cpp_Theme_Material_Dark_Pink_Calculator, false, false),
+
+            // True Black (AMOLED) Themes
+            material_black_theme(R.string.cpp_theme_amoled_blue, R.style.Cpp_Theme_Material_Black, R.style.Cpp_Theme_Material_Black_Calculator, false, true),
+            material_amoled_cyan(R.string.cpp_theme_amoled_cyan, R.style.Cpp_Theme_Material_Amoled_Cyan, R.style.Cpp_Theme_Material_Amoled_Cyan_Calculator, false, true),
+            material_amoled_teal(R.string.cpp_theme_amoled_teal, R.style.Cpp_Theme_Material_Amoled_Teal, R.style.Cpp_Theme_Material_Amoled_Teal_Calculator, false, true),
+            material_amoled_green(R.string.cpp_theme_amoled_green, R.style.Cpp_Theme_Material_Amoled_Green, R.style.Cpp_Theme_Material_Amoled_Green_Calculator, false, true),
+            material_amoled_purple(R.string.cpp_theme_amoled_purple, R.style.Cpp_Theme_Material_Amoled_Purple, R.style.Cpp_Theme_Material_Amoled_Purple_Calculator, false, true),
+            material_amoled_amber(R.string.cpp_theme_amoled_amber, R.style.Cpp_Theme_Material_Amoled_Amber, R.style.Cpp_Theme_Material_Amoled_Amber_Calculator, false, true),
+            material_amoled_red(R.string.cpp_theme_amoled_red, R.style.Cpp_Theme_Material_Amoled_Red, R.style.Cpp_Theme_Material_Amoled_Red_Calculator, false, true),
+
+            // Grey Theme
+            material_grey_theme(R.string.cpp_theme_grey, R.style.Cpp_Theme_Material_Grey, R.style.Cpp_Theme_Material_Grey_Calculator, false, false),
+
+            // Legacy fallbacks
+            default_theme(R.style.Cpp_Theme_Material),
+            violet_theme(R.style.Cpp_Theme_Material),
+            light_blue_theme(R.style.Cpp_Theme_Material),
+            metro_blue_theme(R.string.cpp_theme_black_blue, R.style.Cpp_Theme_Material, R.style.Cpp_Theme_Material_Calculator, false, false),
+            metro_purple_theme(R.string.cpp_theme_black_purple, R.style.Cpp_Theme_Material_Dark_Purple, R.style.Cpp_Theme_Material_Dark_Purple_Calculator, false, false),
+            metro_green_theme(R.string.cpp_theme_black_green, R.style.Cpp_Theme_Material_Dark_Green, R.style.Cpp_Theme_Material_Dark_Green_Calculator, false, false);
 
             private static final SparseArray<TextColor> textColors = new SparseArray<>();
 
@@ -312,23 +335,33 @@ public final class Preferences {
             @StyleRes
             public final int alertDialogTheme;
             public final boolean light;
+            public final boolean amoled;
 
             Theme(@StyleRes int theme) {
-                this(R.string.cpp_theme_dark, theme, theme);
+                this(R.string.cpp_theme_black_blue, theme, theme, false, false);
             }
 
-            Theme(@StringRes int name, @StyleRes int theme, @StyleRes int calculatorTheme) {
-                this(name, theme, calculatorTheme, R.style.Cpp_Theme_Wizard, R.style.Cpp_Theme_Material_Dialog, R.style.Cpp_Theme_Material_Dialog_Alert);
+            Theme(@StringRes int name, @StyleRes int theme, @StyleRes int calculatorTheme, boolean light, boolean amoled) {
+                this(name, theme, calculatorTheme,
+                        light ? R.style.Cpp_Theme_Wizard_Light : R.style.Cpp_Theme_Wizard,
+                        light ? R.style.Cpp_Theme_Material_Light_Dialog : R.style.Cpp_Theme_Material_Dialog,
+                        light ? R.style.Cpp_Theme_Material_Light_Dialog_Alert : R.style.Cpp_Theme_Material_Dialog_Alert,
+                        light, amoled);
             }
 
-            Theme(@StringRes int name, @StyleRes int theme, @StyleRes int calculatorTheme, @StyleRes int wizardTheme, @StyleRes int dialogTheme, @StyleRes int alertDialogTheme) {
+            Theme(@StringRes int name, @StyleRes int theme, @StyleRes int calculatorTheme, @StyleRes int wizardTheme, @StyleRes int dialogTheme, @StyleRes int alertDialogTheme, boolean light, boolean amoled) {
                 this.name = name;
                 this.theme = theme;
                 this.calculatorTheme = calculatorTheme;
                 this.wizardTheme = wizardTheme;
                 this.dialogTheme = dialogTheme;
                 this.alertDialogTheme = alertDialogTheme;
-                this.light = theme == R.style.Cpp_Theme_Material_Light;
+                this.light = light;
+                this.amoled = amoled;
+            }
+
+            public boolean isAmoled() {
+                return amoled;
             }
 
             public int getThemeFor(@Nonnull Context context) {

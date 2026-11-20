@@ -58,6 +58,16 @@ public class NumberFormatter {
         this.groupingSeparator = groupingSeparator;
     }
 
+    private Real.NumberingSystem numberingSystem = Real.NumberingSystem.international;
+
+    public void setNumberingSystem(Real.NumberingSystem numberingSystem) {
+        this.numberingSystem = numberingSystem != null ? numberingSystem : Real.NumberingSystem.international;
+    }
+
+    public Real.NumberingSystem getNumberingSystem() {
+        return numberingSystem;
+    }
+
     @Nonnull
     public CharSequence format(double value) {
         return format(value, 10);
@@ -91,6 +101,7 @@ public class NumberFormatter {
             numberFormat.fse = format;
         }
         numberFormat.thousand = groupingSeparator;
+        numberFormat.numberingSystem = numberingSystem;
         numberFormat.precision = precision;
         numberFormat.base = radix;
         numberFormat.maxwidth = simpleFormat ? 100 : 30;
@@ -121,6 +132,7 @@ public class NumberFormatter {
             numberFormat.fse = format;
         }
         numberFormat.thousand = groupingSeparator;
+        numberFormat.numberingSystem = numberingSystem;
         numberFormat.precision = Math.max(0, Math.min(precision, MAX_PRECISION));
         numberFormat.base = radix;
         numberFormat.maxwidth = simpleFormat ? 100 : 30;

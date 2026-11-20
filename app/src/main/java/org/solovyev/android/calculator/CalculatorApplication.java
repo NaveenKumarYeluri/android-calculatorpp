@@ -183,8 +183,28 @@ public class CalculatorApplication extends android.app.Application implements Sh
         }
     }
 
+    @Override
+    protected void attachBaseContext(android.content.Context base) {
+        super.attachBaseContext(base);
+        try {
+            final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(base);
+            applyDayNightMode(prefs);
+        } catch (Throwable ignored) {
+        }
+    }
+
+    public static void applyDayNightMode(@Nonnull SharedPreferences prefs) {
+        final Preferences.Gui.Theme theme = Preferences.Gui.getTheme(prefs);
+        if (theme.light) {
+            androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
+        } else {
+            androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES);
+        }
+    }
+
     private void onPreCreate(@Nonnull SharedPreferences prefs, @NonNull SharedPreferences uiPrefs,
             @Nonnull Languages languages) {
+        applyDayNightMode(prefs);
         // initializing App before #onCreate as FloatingCalculatorService might be created in
         // #onCreate
         App.init(this, prefs);

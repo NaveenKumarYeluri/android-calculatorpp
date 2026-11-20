@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ==================== Light Theme Accent Styles ==================== -->
+
+    <style name="CppKeyboardButton.Material.Light.Operation.Blue" parent="CppKeyboardButton.Material.Light.Digit">
+        <item name="android:background">@drawable/material_button_light_blue</item>
+        <item name="directionTextAlpha">0.7</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Blue" parent="Cpp.Theme.Material.Light">
+        <item name="colorAccent">@color/accent_blue</item>
+        <item name="cpp_fab_bg">@color/accent_blue</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Blue</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Blue</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Blue.Calculator" parent="Cpp.Theme.Material.Light.Blue">
+        <item name="android:windowBackground">@color/cpp_bg_light</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Light.Operation.Green" parent="CppKeyboardButton.Material.Light.Digit">
+        <item name="android:background">@drawable/material_button_light_green</item>
+        <item name="directionTextAlpha">0.7</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Green" parent="Cpp.Theme.Material.Light">
+        <item name="colorAccent">@color/accent_green</item>
+        <item name="cpp_fab_bg">@color/accent_green</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Green</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Green</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Green.Calculator" parent="Cpp.Theme.Material.Light.Green">
+        <item name="android:windowBackground">@color/cpp_bg_light</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Light.Operation.Purple" parent="CppKeyboardButton.Material.Light.Digit">
+        <item name="android:background">@drawable/material_button_light_purple</item>
+        <item name="directionTextAlpha">0.7</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Purple" parent="Cpp.Theme.Material.Light">
+        <item name="colorAccent">@color/accent_purple</item>
+        <item name="cpp_fab_bg">@color/accent_purple</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Purple</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Purple</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Purple.Calculator" parent="Cpp.Theme.Material.Light.Purple">
+        <item name="android:windowBackground">@color/cpp_bg_light</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Light.Operation.Amber" parent="CppKeyboardButton.Material.Light.Digit">
+        <item name="android:background">@drawable/material_button_light_amber</item>
+        <item name="directionTextAlpha">0.7</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Amber" parent="Cpp.Theme.Material.Light">
+        <item name="colorAccent">@color/accent_amber</item>
+        <item name="cpp_fab_bg">@color/accent_amber</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Amber</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Amber</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Amber.Calculator" parent="Cpp.Theme.Material.Light.Amber">
+        <item name="android:windowBackground">@color/cpp_bg_light</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Light.Operation.Red" parent="CppKeyboardButton.Material.Light.Digit">
+        <item name="android:background">@drawable/material_button_light_red</item>
+        <item name="directionTextAlpha">0.7</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Red" parent="Cpp.Theme.Material.Light">
+        <item name="colorAccent">@color/accent_red</item>
+        <item name="cpp_fab_bg">@color/accent_red</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Red</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Red</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Red.Calculator" parent="Cpp.Theme.Material.Light.Red">
+        <item name="android:windowBackground">@color/cpp_bg_light</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Light.Operation.Pink" parent="CppKeyboardButton.Material.Light.Digit">
+        <item name="android:background">@drawable/material_button_light_pink</item>
+        <item name="directionTextAlpha">0.7</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Pink" parent="Cpp.Theme.Material.Light">
+        <item name="colorAccent">@color/accent_pink</item>
+        <item name="cpp_fab_bg">@color/accent_pink</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Light.Operation.Pink</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Light.Operation.Pink</item>
+    </style>
+    <style name="Cpp.Theme.Material.Light.Pink.Calculator" parent="Cpp.Theme.Material.Light.Pink">
+        <item name="android:windowBackground">@color/cpp_bg_light</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- ==================== Dark (Black) Theme Accent Styles ==================== -->
+
+    <style name="CppKeyboardButton.Material.Dark.Operation.Teal" parent="CppKeyboardButton.Material.Digit">
+        <item name="android:background">@drawable/material_button_dark_teal</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Teal" parent="Cpp.Theme.Material">
+        <item name="colorAccent">@color/accent_dark_teal</item>
+        <item name="cpp_fab_bg">@color/accent_dark_teal</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Teal</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Teal</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Teal.Calculator" parent="Cpp.Theme.Material.Dark.Teal">
+        <item name="android:windowBackground">@color/cpp_editor_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Dark.Operation.Green" parent="CppKeyboardButton.Material.Digit">
+        <item name="android:background">@drawable/material_button_dark_green</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Green" parent="Cpp.Theme.Material">
+        <item name="colorAccent">@color/accent_dark_green</item>
+        <item name="cpp_fab_bg">@color/accent_dark_green</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Green</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Green</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Green.Calculator" parent="Cpp.Theme.Material.Dark.Green">
+        <item name="android:windowBackground">@color/cpp_editor_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Dark.Operation.Purple" parent="CppKeyboardButton.Material.Digit">
+        <item name="android:background">@drawable/material_button_dark_purple</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Purple" parent="Cpp.Theme.Material">
+        <item name="colorAccent">@color/accent_dark_purple</item>
+        <item name="cpp_fab_bg">@color/accent_dark_purple</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Purple</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Purple</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Purple.Calculator" parent="Cpp.Theme.Material.Dark.Purple">
+        <item name="android:windowBackground">@color/cpp_editor_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Dark.Operation.Amber" parent="CppKeyboardButton.Material.Digit">
+        <item name="android:background">@drawable/material_button_dark_amber</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Amber" parent="Cpp.Theme.Material">
+        <item name="colorAccent">@color/accent_dark_amber</item>
+        <item name="cpp_fab_bg">@color/accent_dark_amber</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Amber</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Amber</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Amber.Calculator" parent="Cpp.Theme.Material.Dark.Amber">
+        <item name="android:windowBackground">@color/cpp_editor_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Dark.Operation.Red" parent="CppKeyboardButton.Material.Digit">
+        <item name="android:background">@drawable/material_button_dark_red</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Red" parent="Cpp.Theme.Material">
+        <item name="colorAccent">@color/accent_dark_red</item>
+        <item name="cpp_fab_bg">@color/accent_dark_red</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Red</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Red</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Red.Calculator" parent="Cpp.Theme.Material.Dark.Red">
+        <item name="android:windowBackground">@color/cpp_editor_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Dark.Operation.Pink" parent="CppKeyboardButton.Material.Digit">
+        <item name="android:background">@drawable/material_button_dark_pink</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Pink" parent="Cpp.Theme.Material">
+        <item name="colorAccent">@color/accent_dark_pink</item>
+        <item name="cpp_fab_bg">@color/accent_dark_pink</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Dark.Operation.Pink</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Dark.Operation.Pink</item>
+    </style>
+    <style name="Cpp.Theme.Material.Dark.Pink.Calculator" parent="Cpp.Theme.Material.Dark.Pink">
+        <item name="android:windowBackground">@color/cpp_editor_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- ==================== True Black (AMOLED) Accent Styles ==================== -->
+
+    <style name="CppKeyboardButton.Material.Amoled.Operation.Teal" parent="CppKeyboardButton.Material.TrueBlack.Operation">
+        <item name="android:background">@drawable/material_button_amoled_teal</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Teal" parent="Cpp.Theme.Material.Black">
+        <item name="colorAccent">@color/accent_dark_teal</item>
+        <item name="cpp_fab_bg">@color/accent_dark_teal</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Teal</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Teal</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Teal.Calculator" parent="Cpp.Theme.Material.Amoled.Teal">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Amoled.Operation.Green" parent="CppKeyboardButton.Material.TrueBlack.Operation">
+        <item name="android:background">@drawable/material_button_amoled_green</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Green" parent="Cpp.Theme.Material.Black">
+        <item name="colorAccent">@color/accent_dark_green</item>
+        <item name="cpp_fab_bg">@color/accent_dark_green</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Green</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Green</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Green.Calculator" parent="Cpp.Theme.Material.Amoled.Green">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Amoled.Operation.Purple" parent="CppKeyboardButton.Material.TrueBlack.Operation">
+        <item name="android:background">@drawable/material_button_amoled_purple</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Purple" parent="Cpp.Theme.Material.Black">
+        <item name="colorAccent">@color/accent_dark_purple</item>
+        <item name="cpp_fab_bg">@color/accent_dark_purple</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Purple</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Purple</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Purple.Calculator" parent="Cpp.Theme.Material.Amoled.Purple">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Amoled.Operation.Amber" parent="CppKeyboardButton.Material.TrueBlack.Operation">
+        <item name="android:background">@drawable/material_button_amoled_amber</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Amber" parent="Cpp.Theme.Material.Black">
+        <item name="colorAccent">@color/accent_dark_amber</item>
+        <item name="cpp_fab_bg">@color/accent_dark_amber</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Amber</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Amber</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Amber.Calculator" parent="Cpp.Theme.Material.Amoled.Amber">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Amoled.Operation.Red" parent="CppKeyboardButton.Material.TrueBlack.Operation">
+        <item name="android:background">@drawable/material_button_amoled_red</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Red" parent="Cpp.Theme.Material.Black">
+        <item name="colorAccent">@color/accent_dark_red</item>
+        <item name="cpp_fab_bg">@color/accent_dark_red</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Red</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Red</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Red.Calculator" parent="Cpp.Theme.Material.Amoled.Red">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CppKeyboardButton.Material.Amoled.Operation.Cyan" parent="CppKeyboardButton.Material.TrueBlack.Operation">
+        <item name="android:background">@drawable/material_button_amoled_cyan</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Cyan" parent="Cpp.Theme.Material.Black">
+        <item name="colorAccent">@color/accent_dark_cyan</item>
+        <item name="cpp_fab_bg">@color/accent_dark_cyan</item>
+        <item name="cpp_button_style_operation">@style/CppKeyboardButton.Material.Amoled.Operation.Cyan</item>
+        <item name="cpp_button_style_operation_highlighted">@style/CppKeyboardButton.Material.Amoled.Operation.Cyan</item>
+    </style>
+    <style name="Cpp.Theme.Material.Amoled.Cyan.Calculator" parent="Cpp.Theme.Material.Amoled.Cyan">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+</resources>

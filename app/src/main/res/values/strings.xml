@@ -33,9 +33,37 @@
     <string name="cpp_theme_black">Black</string>
     <string name="cpp_theme_grey">Grey</string>
     <string name="cpp_theme_true_black">True Black (AMOLED)</string>
+
+    <!-- Detailed Theme Names with Accents -->
+    <string name="cpp_theme_white_teal">White • Teal</string>
+    <string name="cpp_theme_white_blue">White • Blue</string>
+    <string name="cpp_theme_white_green">White • Green</string>
+    <string name="cpp_theme_white_purple">White • Purple</string>
+    <string name="cpp_theme_white_amber">White • Amber</string>
+    <string name="cpp_theme_white_red">White • Red</string>
+    <string name="cpp_theme_white_pink">White • Pink</string>
+
+    <string name="cpp_theme_black_blue">Black • Blue</string>
+    <string name="cpp_theme_black_teal">Black • Teal</string>
+    <string name="cpp_theme_black_green">Black • Green</string>
+    <string name="cpp_theme_black_purple">Black • Purple</string>
+    <string name="cpp_theme_black_amber">Black • Amber</string>
+    <string name="cpp_theme_black_red">Black • Red</string>
+    <string name="cpp_theme_black_pink">Black • Pink</string>
+
+    <string name="cpp_theme_amoled_blue">True Black • Blue</string>
+    <string name="cpp_theme_amoled_cyan">True Black • Cyan</string>
+    <string name="cpp_theme_amoled_green">True Black • Green</string>
+    <string name="cpp_theme_amoled_purple">True Black • Purple</string>
+    <string name="cpp_theme_amoled_amber">True Black • Amber</string>
+    <string name="cpp_theme_amoled_red">True Black • Red</string>
+    <string name="cpp_theme_amoled_teal">True Black • Teal</string>
     <string name="cpp_thousands_separator_no">No grouping separator</string>
     <string name="cpp_thousands_separator_apostrophe">Apostrophe (\')</string>
     <string name="cpp_thousands_separator_space">Space ( )</string>
+    <string name="cpp_numbering_system">Numbering format</string>
+    <string name="cpp_numbering_system_international">International (Millions: 1,000,000)</string>
+    <string name="cpp_numbering_system_indian">Indian (Lakhs, Crores: 10,00,000)</string>
     <string name="not_valid_result">Current result is not valid!</string>
     <string name="c_use">Use</string>
     <string name="c_copy_expression">Copy expression</string>

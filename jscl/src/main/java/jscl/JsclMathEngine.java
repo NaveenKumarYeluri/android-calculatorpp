@@ -167,6 +167,7 @@ public class JsclMathEngine implements MathEngine {
     private NumberFormatter prepareNumberFormatter(@Nonnull NumeralBase nb) {
         final NumberFormatter nf = numberFormatter.get();
         nf.setGroupingSeparator(hasGroupingSeparator() ? getGroupingSeparator(nb) : NumberFormatter.NO_GROUPING);
+        nf.setNumberingSystem(numberingSystem);
         nf.setPrecision(precision);
         switch (notation) {
             case FSE_ENG:
@@ -307,5 +308,17 @@ public class JsclMathEngine implements MathEngine {
 
     public void setGroupingSeparator(char separator) {
         this.groupingSeparator = separator;
+    }
+
+    @Nonnull
+    private Real.NumberingSystem numberingSystem = Real.NumberingSystem.international;
+
+    public void setNumberingSystem(@Nonnull Real.NumberingSystem numberingSystem) {
+        this.numberingSystem = numberingSystem;
+    }
+
+    @Nonnull
+    public Real.NumberingSystem getNumberingSystem() {
+        return this.numberingSystem;
     }
 }

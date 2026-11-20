@@ -25,16 +25,20 @@ Distributed under the **[Apache License 2.0](LICENSE)**.
 - **Zero Ads & Trackers**: Removed Google Mobile Ads SDK (`play-services-ads`), Firebase Crashlytics, and Firebase Analytics.
 - **Zero In-App Purchases**: Removed Google Play Billing library (`checkout`), `BILLING` permission, and purchase prompts. The entire application is 100% free, open source, and offline.
 
-### 🎨 2. Material UI Themes
+### 🎨 2. Material UI Themes & Rich Accents
 Custom tailored Material themes for all lighting preferences and display types:
-- **White (Material Light)**: Clean, high-contrast light theme with crisp typography.
-- **Black (Material Dark)**: Modern Material Dark theme with #121212 surfaces.
+- **White (Material Light)**: Clean, high-contrast light theme with 7 distinct accent options (Teal, Blue, Green, Purple, Amber, Red, Pink).
+- **Black (Material Dark)**: Modern Material Dark theme with #121212 surfaces and 7 accent colorways.
+- **True Black (AMOLED)**: Pitch black #000000 background offering zero pixel power consumption with vibrant accents (Blue, Cyan, Teal, Green, Purple, Amber, Red).
 - **Grey (Material Neutral)**: Soft slate grey theme (#2B2D30) comfortable for extended sessions.
-- **True Black (AMOLED)**: Pitch black #000000 background offering zero pixel power consumption on OLED displays.
+- **Theme-Aligned Android 12+ Splash Screen**: Cold-start splash screen background and vector icon automatically match the user's picked theme (pure white on light themes, dark on dark/AMOLED themes).
 
-*All themes are available across the main calculator, dialogs, widgets, and the floating on-screen window.*
+### 🔢 3. Flexible Number Formatting (Indian & International)
+- **Indian Numbering Format**: Formats numbers using Lakhs and Crores (e.g. `10,00,000` / `1,00,00,000`).
+- **International / Western Format**: Formats numbers using Thousands and Millions (e.g. `1,000,000` / `10,000,000`).
+- Configurable grouping separators (apostrophe, space, none) with instant live preview in settings.
 
-### 🪟 3. Floating Window Enhancements
+### 🪟 4. Floating Window Enhancements
 - **Quick Settings Tile**: Launch the floating calculator directly from the Android Quick Settings shade (`FloatingCalculatorTileService`).
 - **Android App Shortcuts**: Long-press app icon to instantly jump to Floating Calculator or Calculation History.
 - **Display Quick Copy**: Long-press the floating calculator display to instantly copy the current result to the clipboard with toast feedback.

@@ -277,6 +277,7 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
         mathEngine.setPrecision(Preferences.Output.precision.getPreference(preferences));
         mathEngine.setNotation(Preferences.Output.notation.getPreference(preferences).id);
         mathEngine.setGroupingSeparator(Preferences.Output.separator.getPreference(preferences));
+        mathEngine.setNumberingSystem(Preferences.Output.numberingSystem.getPreference(preferences));
 
         bus.post(ChangedEvent.INSTANCE);
     }
@@ -345,6 +346,7 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
             preferenceKeys.add(Output.precision.getKey());
             preferenceKeys.add(Output.notation.getKey());
             preferenceKeys.add(Output.separator.getKey());
+            preferenceKeys.add(Output.numberingSystem.getKey());
         }
 
         @Nonnull
@@ -386,6 +388,7 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
             public static final StringPreference<Integer> precision = StringPreference.ofTypedValue("engine.output.precision", "5", NumberMapper.of(Integer.class));
             public static final StringPreference<Notation> notation = StringPreference.ofEnum("engine.output.notation", Notation.dec, Notation.class);
             public static final StringPreference<Character> separator = StringPreference.ofTypedValue("engine.output.separator", JsclMathEngine.GROUPING_SEPARATOR_DEFAULT, CharacterMapper.INSTANCE);
+            public static final Preference<midpcalc.Real.NumberingSystem> numberingSystem = StringPreference.ofEnum("engine.output.numberingSystem", midpcalc.Real.NumberingSystem.international, midpcalc.Real.NumberingSystem.class);
         }
     }
 }
