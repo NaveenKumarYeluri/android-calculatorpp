@@ -3,6 +3,8 @@ package org.solovyev.android.calculator;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import androidx.annotation.NonNull;
 import android.text.TextUtils;
@@ -72,7 +74,11 @@ public final class WidgetReceiver extends BroadcastReceiver {
         if (vibrator == null) {
             return;
         }
-        vibrator.vibrate(10);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK));
+        } else {
+            vibrator.vibrate(10);
+        }
     }
 
     private static class MyRunnable implements Runnable {

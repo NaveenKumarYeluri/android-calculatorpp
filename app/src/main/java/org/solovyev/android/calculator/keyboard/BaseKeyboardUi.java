@@ -28,6 +28,7 @@ import org.solovyev.android.calculator.Editor;
 import org.solovyev.android.calculator.Keyboard;
 import org.solovyev.android.calculator.Preferences;
 import org.solovyev.android.calculator.buttons.CppButton;
+import org.solovyev.android.calculator.view.HapticHelper;
 import org.solovyev.android.calculator.memory.Memory;
 import org.solovyev.android.views.Adjuster;
 import org.solovyev.android.views.dragbutton.DirectionDragButton;
@@ -207,7 +208,7 @@ public abstract class BaseKeyboardUi implements SharedPreferences.OnSharedPrefer
         if (!keyboard.isVibrateOnKeypress()) {
             return;
         }
-        v.performHapticFeedback(KEYBOARD_TAP, FLAG_IGNORE_GLOBAL_SETTING | FLAG_IGNORE_VIEW_SETTING);
+        HapticHelper.feedbackKeypress(v);
     }
 
     private static class AdjusterHelper implements Adjuster.Helper<DirectionDragImageButton> {
