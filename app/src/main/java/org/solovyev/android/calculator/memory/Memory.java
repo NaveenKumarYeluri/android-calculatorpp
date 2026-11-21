@@ -154,8 +154,30 @@ public class Memory {
         });
     }
 
+    public void store(@NonNull final Generic that) {
+        Check.isMainThread();
+        if (!loaded) {
+            postStore(that);
+            return;
+        }
+        try {
+            setValue(that);
+        } catch (RuntimeException e) {
+            notifier.showMessage(e);
+        }
+    }
+
+    private void postStore(@NonNull final Generic that) {
+        whenLoadedRunnables.add(new Runnable() {
+            @Override
+            public void run() {
+                store(that);
+            }
+        });
+    }
+
     @NonNull
-    private String getValue() {
+    public String getValue() {
         Check.isTrue(loaded);
         try {
             return value.toString();
@@ -174,7 +196,7 @@ public class Memory {
     }
 
     private void show() {
-        notifier.showMessage(getValue());
+        notifier.showMessage("M = " + getValue());
     }
 
     public void clear() {

@@ -46,6 +46,7 @@ public enum CppSpecialButton {
     memory_plus("M+"),
     memory_minus("M-"),
     memory_clear("MC"),
+    memory_store("MS"),
     erase("erase", '\ue004'),
     paste("paste", '\uE000'),
     copy("copy", '\uE001'),

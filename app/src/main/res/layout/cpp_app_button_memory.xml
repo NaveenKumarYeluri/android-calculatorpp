@@ -26,6 +26,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:text="@string/cpp_kb_memory_recall"
-    app:directionTextDown="@string/cpp_kb_memory_minus"
     app:directionTextUp="@string/cpp_kb_memory_plus"
+    app:directionTextDown="@string/cpp_kb_memory_minus"
+    app:directionTextLeft="@string/cpp_kb_memory_clear"
+    app:directionTextRight="@string/cpp_kb_memory_store"
     android:textStyle="bold"/>

@@ -215,6 +215,9 @@ public class Keyboard implements SharedPreferences.OnSharedPreferenceChangeListe
             case memory_clear:
                 memory.get().clear();
                 break;
+            case memory_store:
+                handleMemoryStore();
+                break;
             case erase:
                 editor.erase();
                 break;
@@ -344,6 +347,27 @@ public class Keyboard implements SharedPreferences.OnSharedPreferenceChangeListe
         } else {
             memory.get().subtract(value);
         }
+        return true;
+    }
+
+    private boolean handleMemoryStore() {
+        final DisplayState state = display.getState();
+        if (!state.valid) {
+            return false;
+        }
+        Generic value = state.getResult();
+        if (value == null) {
+            try {
+                value = Expression.valueOf(state.text);
+            } catch (jscl.text.ParseException e) {
+                Log.w(App.TAG, e.getMessage(), e);
+            }
+        }
+        if (value == null) {
+            memory.get().requestShow();
+            return false;
+        }
+        memory.get().store(value);
         return true;
     }
 

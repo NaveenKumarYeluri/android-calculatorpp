@@ -4,10 +4,11 @@
     <string name="cpp_kb_variables" translatable="false">π</string>
     <string name="cpp_kb_functions" translatable="false">ƒ</string>
     <string name="cpp_kb_operators" translatable="false">∂</string>
-    <string name="cpp_kb_memory_recall" translatable="false">M</string>
+    <string name="cpp_kb_memory_recall" translatable="false">MR</string>
     <string name="cpp_kb_memory_plus" translatable="false">M+</string>
     <string name="cpp_kb_memory_minus" translatable="false">M-</string>
     <string name="cpp_kb_memory_clear" translatable="false">MC</string>
+    <string name="cpp_kb_memory_store" translatable="false">MS</string>
     <string name="cpp_dimensions_x_min" translatable="false">X min</string>
     <string name="dimensions_x_max" translatable="false">X max</string>
     <string name="dimensions_y_min" translatable="false">Y min</string>

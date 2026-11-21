@@ -128,6 +128,16 @@ public class KeyboardUi extends BaseKeyboardUi {
 
         prepareButton(likeButton);
         prepareButton(memoryButton);
+        if (memoryButton != null) {
+            memoryButton.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    org.solovyev.android.calculator.view.HapticHelper.feedbackKeypress(v);
+                    memory.get().requestShow();
+                    return true;
+                }
+            });
+        }
 
         if (isSimpleMode()) {
             hideText(button1, down);
