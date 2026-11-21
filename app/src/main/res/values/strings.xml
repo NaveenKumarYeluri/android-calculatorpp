@@ -31,7 +31,6 @@
     <string name="cpp_theme_app">App theme</string>
     <string name="cpp_theme_white">White</string>
     <string name="cpp_theme_black">Black</string>
-    <string name="cpp_theme_grey">Grey</string>
     <string name="cpp_theme_true_black">Material AMOLED</string>
     <string name="cpp_theme_grey">Material Grey</string>
     <string name="cpp_theme_dynamic">Material You (Dynamic / Follow System)</string>
