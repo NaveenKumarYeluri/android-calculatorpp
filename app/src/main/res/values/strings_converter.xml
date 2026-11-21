@@ -6,4 +6,5 @@
     <string name="cpp_converter_length">Length</string>
     <string name="cpp_converter_mass">Mass</string>
     <string name="cpp_converter_temperature">Temperature</string>
+    <string name="cpp_converter_digital_storage">Digital storage</string>
 </resources>

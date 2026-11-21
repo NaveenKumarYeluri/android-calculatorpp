@@ -29,4 +29,19 @@
     <string name="cpp_units_mass_t">t</string>
     <string name="cpp_units_mass_tons_uk">t (UK)</string>
     <string name="cpp_units_mass_tons_us">t (US)</string>
+    <string name="cpp_units_storage_bits">b (bits)</string>
+    <string name="cpp_units_storage_bytes">B (bytes)</string>
+    <string name="cpp_units_storage_kilobits">kb (kilobits)</string>
+    <string name="cpp_units_storage_kilobytes">KB (kilobytes)</string>
+    <string name="cpp_units_storage_kibibytes">KiB (kibibytes)</string>
+    <string name="cpp_units_storage_megabits">Mb (megabits)</string>
+    <string name="cpp_units_storage_megabytes">MB (megabytes)</string>
+    <string name="cpp_units_storage_mebibytes">MiB (mebibytes)</string>
+    <string name="cpp_units_storage_gigabits">Gb (gigabits)</string>
+    <string name="cpp_units_storage_gigabytes">GB (gigabytes)</string>
+    <string name="cpp_units_storage_gibibytes">GiB (gibibytes)</string>
+    <string name="cpp_units_storage_terabytes">TB (terabytes)</string>
+    <string name="cpp_units_storage_tebibytes">TiB (tebibytes)</string>
+    <string name="cpp_units_storage_petabytes">PB (petabytes)</string>
+    <string name="cpp_units_storage_pebibytes">PiB (pebibytes)</string>
 </resources>

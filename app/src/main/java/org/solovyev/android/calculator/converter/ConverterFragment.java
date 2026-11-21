@@ -142,6 +142,7 @@ public class ConverterFragment extends BaseDialogFragment
         for (ConvertibleDimension dimension : UnitDimension.values()) {
             dimensionsAdapter.add(dimension.named(context));
         }
+        dimensionsAdapter.add(DigitalStorageDimension.get().named(context));
         dimensionsAdapter.add(NumeralBaseDimension.get().named(context));
         adapterFrom = App.makeSimpleSpinnerAdapter(context);
         adapterTo = App.makeSimpleSpinnerAdapter(context);
