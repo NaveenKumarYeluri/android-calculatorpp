@@ -209,4 +209,35 @@ public class JsclMathEngineTest {
         assertEquals("111.11123E3", me.format(111111.23d));
         assertEquals("111.1112E3", me.format(111111.2d));
     }
+
+    @Test
+    public void testFormatString() throws Exception {
+        try {
+            me.setGroupingSeparator(',');
+            me.setNumberingSystem(NumberingSystem.international);
+            assertEquals("1,000", me.format("1000", NumeralBase.dec));
+            assertEquals("10,000", me.format("10000", NumeralBase.dec));
+            assertEquals("100,000", me.format("100000", NumeralBase.dec));
+            assertEquals("1,000,000", me.format("1000000", NumeralBase.dec));
+            assertEquals("10,000,000", me.format("10000000", NumeralBase.dec));
+            assertEquals("-1,000,000", me.format("-1000000", NumeralBase.dec));
+            assertEquals("1,000,000.5", me.format("1000000.5", NumeralBase.dec));
+            assertEquals("1,000,000E3", me.format("1000000E3", NumeralBase.dec));
+
+            me.setNumberingSystem(NumberingSystem.indian);
+            assertEquals("1,000", me.format("1000", NumeralBase.dec));
+            assertEquals("10,000", me.format("10000", NumeralBase.dec));
+            assertEquals("1,00,000", me.format("100000", NumeralBase.dec));
+            assertEquals("10,00,000", me.format("1000000", NumeralBase.dec));
+            assertEquals("1,00,00,000", me.format("10000000", NumeralBase.dec));
+            assertEquals("10,00,00,000", me.format("100000000", NumeralBase.dec));
+            assertEquals("-10,00,000", me.format("-1000000", NumeralBase.dec));
+            assertEquals("10,00,000.5", me.format("1000000.5", NumeralBase.dec));
+            assertEquals("10,00,000E3", me.format("1000000E3", NumeralBase.dec));
+            assertEquals("-10,00,000E-3", me.format("-1000000E-3", NumeralBase.dec));
+        } finally {
+            me.setGroupingSeparator(NumberFormatter.NO_GROUPING);
+            me.setNumberingSystem(NumberingSystem.international);
+        }
+    }
 }

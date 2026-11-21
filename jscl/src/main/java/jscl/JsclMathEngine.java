@@ -273,12 +273,35 @@ public class JsclMathEngine implements MathEngine {
     @Nonnull
     public String insertSeparators(@Nonnull String value, @Nonnull NumeralBase nb) {
         final char separator = getGroupingSeparator(nb);
-        final StringBuilder result = new StringBuilder(value.length() + nb.getGroupingSize());
-        for (int i = value.length() - 1; i >= 0; i--) {
-            result.append(value.charAt(i));
-            if (i != 0 && (value.length() - i) % nb.getGroupingSize() == 0) {
-                result.append(separator);
+        int start = 0;
+        if (value.length() > 0) {
+            final char firstChar = value.charAt(0);
+            if (firstChar == '-' || firstChar == '+' || firstChar == '−') {
+                start = 1;
             }
+        }
+        final int digitsCount = value.length() - start;
+        if (digitsCount <= 0) {
+            return value;
+        }
+
+        final boolean indian = numberingSystem == NumberingSystem.indian && nb == NumeralBase.dec;
+        final StringBuilder result = new StringBuilder(value.length() + nb.getGroupingSize());
+        for (int i = value.length() - 1; i >= start; i--) {
+            result.append(value.charAt(i));
+            final int distance = value.length() - i;
+            if (i > start) {
+                if (indian) {
+                    if (distance == 3 || (distance > 3 && (distance - 3) % 2 == 0)) {
+                        result.append(separator);
+                    }
+                } else if (distance % nb.getGroupingSize() == 0) {
+                    result.append(separator);
+                }
+            }
+        }
+        if (start > 0) {
+            result.append(value.charAt(0));
         }
         return result.reverse().toString();
     }

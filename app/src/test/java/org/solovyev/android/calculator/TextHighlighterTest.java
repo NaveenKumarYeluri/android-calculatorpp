@@ -195,6 +195,23 @@ public class TextHighlighterTest {
         assertFalse(TextHighlighter.isDark(Color.LTGRAY));
         assertTrue(TextHighlighter.isDark(Color.DKGRAY));
         assertTrue(TextHighlighter.isDark(Color.BLACK));
+    }
 
+    @Test
+    public void testIndianNumberFormatting() {
+        try {
+            engine.getMathEngine().setGroupingSeparator(',');
+            engine.getMathEngine().setNumberingSystem(jscl.NumberingSystem.indian);
+            TextHighlighter textHighlighter = new TextHighlighter(0, true, engine);
+            assertEquals("1,000", textHighlighter.process("1000").toString());
+            assertEquals("10,000", textHighlighter.process("10000").toString());
+            assertEquals("1,00,000", textHighlighter.process("100000").toString());
+            assertEquals("10,00,000", textHighlighter.process("1000000").toString());
+            assertEquals("1,00,00,000", textHighlighter.process("10000000").toString());
+            assertEquals("10,00,000 + 20,00,000", textHighlighter.process("1000000 + 2000000").toString());
+        } finally {
+            engine.getMathEngine().setGroupingSeparator(' ');
+            engine.getMathEngine().setNumberingSystem(jscl.NumberingSystem.international);
+        }
     }
 }
