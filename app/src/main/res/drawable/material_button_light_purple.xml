@@ -4,7 +4,6 @@
     android:insetTop="@dimen/cpp_material_button_inset"
     android:insetRight="@dimen/cpp_material_button_inset"
     android:insetBottom="@dimen/cpp_material_button_inset">
-﻿<?xml version="1.0" encoding="utf-8"?>
 <selector >
     <item android:state_pressed="true">
         <shape>
