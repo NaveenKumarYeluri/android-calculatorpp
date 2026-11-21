@@ -8,6 +8,8 @@
     <dimen name="min_expanded_height_lock_screen">300dp</dimen>
     <dimen name="cpp_button_padding">1px</dimen>
     <dimen name="cpp_button_corner">1dp</dimen>
+    <dimen name="cpp_material_button_corner_radius">14dp</dimen>
+    <dimen name="cpp_material_button_inset">2dp</dimen>
 
     <dimen name="cpp_keyboard_button_direction_text_padding_updown">4dp</dimen>
     <dimen name="cpp_keyboard_button_direction_text_padding_left">2dp</dimen>

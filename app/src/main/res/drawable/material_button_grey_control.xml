@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="@dimen/cpp_material_button_inset"
+    android:insetTop="@dimen/cpp_material_button_inset"
+    android:insetRight="@dimen/cpp_material_button_inset"
+    android:insetBottom="@dimen/cpp_material_button_inset">
+<selector >
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/grey_theme_button_control_pressed" />
+            <corners android:radius="@dimen/cpp_material_button_corner_radius" /><solid android:color="@color/grey_theme_button_control_pressed" />
         </shape>
     </item>
     <item>
         <shape>
-            <solid android:color="@color/grey_theme_button_control" />
+            <corners android:radius="@dimen/cpp_material_button_corner_radius" /><solid android:color="@color/grey_theme_button_control" />
         </shape>
     </item>
 </selector>
+</inset>

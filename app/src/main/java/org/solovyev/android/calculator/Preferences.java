@@ -282,6 +282,9 @@ public final class Preferences {
 
         public enum Theme implements PreferenceEntry {
 
+            // Material You (Dynamic Colors)
+            material_dynamic(R.string.cpp_theme_dynamic, R.style.Cpp_Theme_Material, R.style.Cpp_Theme_Material_Calculator, false, false),
+
             // White Themes (Light)
             material_light_theme(R.string.cpp_theme_white_teal, R.style.Cpp_Theme_Material_Light, R.style.Cpp_Theme_Material_Light_Calculator, true, false),
             material_light_blue(R.string.cpp_theme_white_blue, R.style.Cpp_Theme_Material_Light_Blue, R.style.Cpp_Theme_Material_Light_Blue_Calculator, true, false),

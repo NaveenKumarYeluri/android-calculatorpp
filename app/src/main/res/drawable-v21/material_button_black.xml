@@ -24,5 +24,16 @@
 
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="@color/cpp_ripple_material_dark">
-    <item android:drawable="@color/grey_950"/>
+    <item>
+        <inset
+            android:insetLeft="@dimen/cpp_material_button_inset"
+            android:insetTop="@dimen/cpp_material_button_inset"
+            android:insetRight="@dimen/cpp_material_button_inset"
+            android:insetBottom="@dimen/cpp_material_button_inset">
+            <shape android:shape="rectangle">
+                <corners android:radius="@dimen/cpp_material_button_corner_radius" />
+                <solid android:color="@color/grey_950" />
+            </shape>
+        </inset>
+    </item>
 </ripple>

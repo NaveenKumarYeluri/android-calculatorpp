@@ -195,7 +195,9 @@ public class CalculatorApplication extends android.app.Application implements Sh
 
     public static void applyDayNightMode(@Nonnull SharedPreferences prefs) {
         final Preferences.Gui.Theme theme = Preferences.Gui.getTheme(prefs);
-        if (theme.light) {
+        if (theme == Preferences.Gui.Theme.material_dynamic) {
+            androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        } else if (theme.light) {
             androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
         } else {
             androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES);
@@ -205,6 +207,9 @@ public class CalculatorApplication extends android.app.Application implements Sh
     private void onPreCreate(@Nonnull SharedPreferences prefs, @NonNull SharedPreferences uiPrefs,
             @Nonnull Languages languages) {
         applyDayNightMode(prefs);
+        if (Preferences.Gui.getTheme(prefs) == Preferences.Gui.Theme.material_dynamic) {
+            com.google.android.material.color.DynamicColors.applyToActivitiesIfAvailable(this);
+        }
         // initializing App before #onCreate as FloatingCalculatorService might be created in
         // #onCreate
         App.init(this, prefs);

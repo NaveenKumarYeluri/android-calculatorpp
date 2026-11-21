@@ -32,32 +32,34 @@
     <string name="cpp_theme_white">White</string>
     <string name="cpp_theme_black">Black</string>
     <string name="cpp_theme_grey">Grey</string>
-    <string name="cpp_theme_true_black">True Black (AMOLED)</string>
+    <string name="cpp_theme_true_black">Material AMOLED</string>
+    <string name="cpp_theme_grey">Material Grey</string>
+    <string name="cpp_theme_dynamic">Material You (Dynamic / Follow System)</string>
 
     <!-- Detailed Theme Names with Accents -->
-    <string name="cpp_theme_white_teal">White • Teal</string>
-    <string name="cpp_theme_white_blue">White • Blue</string>
-    <string name="cpp_theme_white_green">White • Green</string>
-    <string name="cpp_theme_white_purple">White • Purple</string>
-    <string name="cpp_theme_white_amber">White • Amber</string>
-    <string name="cpp_theme_white_red">White • Red</string>
-    <string name="cpp_theme_white_pink">White • Pink</string>
+    <string name="cpp_theme_white_teal">Material Light • Teal</string>
+    <string name="cpp_theme_white_blue">Material Light • Blue</string>
+    <string name="cpp_theme_white_green">Material Light • Green</string>
+    <string name="cpp_theme_white_purple">Material Light • Purple</string>
+    <string name="cpp_theme_white_amber">Material Light • Amber</string>
+    <string name="cpp_theme_white_red">Material Light • Red</string>
+    <string name="cpp_theme_white_pink">Material Light • Pink</string>
 
-    <string name="cpp_theme_black_blue">Black • Blue</string>
-    <string name="cpp_theme_black_teal">Black • Teal</string>
-    <string name="cpp_theme_black_green">Black • Green</string>
-    <string name="cpp_theme_black_purple">Black • Purple</string>
-    <string name="cpp_theme_black_amber">Black • Amber</string>
-    <string name="cpp_theme_black_red">Black • Red</string>
-    <string name="cpp_theme_black_pink">Black • Pink</string>
+    <string name="cpp_theme_black_blue">Material Dark • Blue</string>
+    <string name="cpp_theme_black_teal">Material Dark • Teal</string>
+    <string name="cpp_theme_black_green">Material Dark • Green</string>
+    <string name="cpp_theme_black_purple">Material Dark • Purple</string>
+    <string name="cpp_theme_black_amber">Material Dark • Amber</string>
+    <string name="cpp_theme_black_red">Material Dark • Red</string>
+    <string name="cpp_theme_black_pink">Material Dark • Pink</string>
 
-    <string name="cpp_theme_amoled_blue">True Black • Blue</string>
-    <string name="cpp_theme_amoled_cyan">True Black • Cyan</string>
-    <string name="cpp_theme_amoled_green">True Black • Green</string>
-    <string name="cpp_theme_amoled_purple">True Black • Purple</string>
-    <string name="cpp_theme_amoled_amber">True Black • Amber</string>
-    <string name="cpp_theme_amoled_red">True Black • Red</string>
-    <string name="cpp_theme_amoled_teal">True Black • Teal</string>
+    <string name="cpp_theme_amoled_blue">Material AMOLED • Blue</string>
+    <string name="cpp_theme_amoled_cyan">Material AMOLED • Cyan</string>
+    <string name="cpp_theme_amoled_green">Material AMOLED • Green</string>
+    <string name="cpp_theme_amoled_purple">Material AMOLED • Purple</string>
+    <string name="cpp_theme_amoled_amber">Material AMOLED • Amber</string>
+    <string name="cpp_theme_amoled_red">Material AMOLED • Red</string>
+    <string name="cpp_theme_amoled_teal">Material AMOLED • Teal</string>
     <string name="cpp_thousands_separator_no">No grouping separator</string>
     <string name="cpp_thousands_separator_comma">Comma (,)</string>
     <string name="cpp_thousands_separator_apostrophe">Apostrophe (\')</string>

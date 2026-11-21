@@ -273,6 +273,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Sha
         final ListPreference theme = (ListPreference) getPreferenceManager().findPreference(Preferences.Gui.theme.getKey());
         final FragmentActivity context = getActivity();
         populate(theme,
+                Theme.material_dynamic,
                 // White background themes with accents
                 Theme.material_light_theme,
                 Theme.material_light_blue,
