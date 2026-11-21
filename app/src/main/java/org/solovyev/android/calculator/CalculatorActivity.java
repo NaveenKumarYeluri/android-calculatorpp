@@ -23,19 +23,23 @@
 package org.solovyev.android.calculator;
 
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StyleSpan;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.annotation.StringRes;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -68,6 +72,8 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
     View partialKeyboard;
     FrameLayout editor;
     View mainMenuButton;
+    @Nullable
+    FrameLayout mainMenuContainer;
     private boolean useBackAsPrevious;
 
     public CalculatorActivity() {
@@ -80,6 +86,7 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         partialKeyboard = binding.partialKeyboard;
         editor = binding.editorContainer.editor;
         mainMenuButton = binding.editorContainer.mainMenu;
+        mainMenuContainer = binding.editorContainer.mainMenuContainer;
     }
 
     @Override
@@ -103,6 +110,7 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         }
 
         mainMenuButton.setOnClickListener(this);
+        updateMainMenuPosition();
 
         useBackAsPrevious = Preferences.Gui.useBackAsPrevious.getPreference(preferences);
         if (savedInstanceState == null) {
@@ -130,6 +138,55 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         super.onResume();
         launcher.setActivity(this);
         restartIfModeChanged();
+        updateMainMenuPosition();
+    }
+
+    private void updateMainMenuPosition() {
+        if (mainMenuContainer == null) {
+            return;
+        }
+        final DisplayMetrics dm = getResources().getDisplayMetrics();
+        final int screenWidth = dm.widthPixels;
+        final int screenHeight = dm.heightPixels;
+
+        final ViewGroup.LayoutParams rawLp = mainMenuContainer.getLayoutParams();
+        if (rawLp instanceof FrameLayout.LayoutParams) {
+            final FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) rawLp;
+
+            // Dynamically position based on device height and width:
+            final int endMargin = (screenWidth > 1200 || screenWidth > screenHeight)
+                    ? App.toPixels(this, 8)
+                    : App.toPixels(this, 4);
+            lp.setMarginEnd(endMargin);
+
+            // Dynamic safety check:
+            // If mainView top margin is 0 (i.e. if system insets weren't applied to mainView),
+            // dynamically push the hamburger menu down by status bar height so it never sits under status bar
+            if (mainView != null && mainView.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+                final ViewGroup.MarginLayoutParams mainLp = (ViewGroup.MarginLayoutParams) mainView.getLayoutParams();
+                if (mainLp.topMargin == 0) {
+                    lp.topMargin = getStatusBarHeight(this);
+                } else {
+                    lp.topMargin = 0;
+                }
+            } else {
+                lp.topMargin = 0;
+            }
+
+            mainMenuContainer.setLayoutParams(lp);
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(@Nonnull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        updateMainMenuPosition();
+    }
+
+    @Override
+    protected void onWindowInsetsApplied(@Nonnull Insets insets) {
+        super.onWindowInsetsApplied(insets);
+        updateMainMenuPosition();
     }
 
     @Override

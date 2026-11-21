@@ -6,6 +6,10 @@ android {
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -13,6 +17,12 @@ android {
         }
     }
     namespace 'org.solovyev.android.views.dragbutton'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
 }
 
 dependencies {

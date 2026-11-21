@@ -38,3 +38,15 @@ allprojects {
         }
     }
 }
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin("java") && !project.plugins.hasPlugin("com.android.application") && !project.plugins.hasPlugin("com.android.library")) {
+            project.java {
+                toolchain {
+                    languageVersion = JavaLanguageVersion.of(17)
+                }
+            }
+        }
+    }
+}

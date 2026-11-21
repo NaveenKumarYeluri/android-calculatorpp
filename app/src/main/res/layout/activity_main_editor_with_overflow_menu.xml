@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="0dp"
@@ -11,26 +12,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- make clickable area bigger -->
-    <View
-        android:id="@+id/main_menu"
-        style="?attr/actionOverflowButtonStyle"
-        android:layout_width="40dp"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="top|end"
-        android:background="@null"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp" />
+    <FrameLayout
+        android:id="@+id/main_menu_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end">
 
-    <ImageView
-        style="?attr/actionOverflowButtonStyle"
-        android:layout_width="20dp"
-        android:layout_height="36dp"
-        android:layout_gravity="top|end"
-        android:tooltipText="@null"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp" />
+        <ImageView
+            android:id="@+id/main_menu_icon"
+            android:layout_width="40dp"
+            android:layout_height="?attr/actionBarSize"
+            android:scaleType="centerInside"
+            android:tooltipText="@null"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_menu_overflow"
+            android:src="@drawable/ic_menu_overflow"
+            app:tint="?attr/cpp_text_color"
+            android:tint="?attr/cpp_text_color" />
+
+        <!-- make clickable area bigger -->
+        <View
+            android:id="@+id/main_menu"
+            style="?attr/actionOverflowButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp" />
+
+    </FrameLayout>
+
 </FrameLayout>

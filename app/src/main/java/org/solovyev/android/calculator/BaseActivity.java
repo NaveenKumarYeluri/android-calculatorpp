@@ -6,17 +6,17 @@ import static android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
 import static org.solovyev.android.calculator.App.cast;
 import static org.solovyev.android.calculator.Preferences.Gui.keepScreenOn;
 
+import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Insets;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowInsets;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -27,6 +27,8 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.appbar.AppBarLayout;
@@ -152,20 +154,60 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
         preferences.registerOnSharedPreferenceChangeListener(this);
     }
 
+    public static int getStatusBarHeight(@Nonnull Context context) {
+        int result = 0;
+        final int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        if (result <= 0) {
+            result = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24, context.getResources().getDisplayMetrics());
+        }
+        return result;
+    }
+
+    public static int getNavigationBarHeight(@Nonnull Context context) {
+        int result = 0;
+        final int resourceId = context.getResources().getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
     private void createView() {
         setContentView(layoutId);
         View contentView = findViewById(android.R.id.content);
         mainView = contentView.findViewById(R.id.main);
         toolbar = contentView.findViewById(R.id.toolbar);
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-            mainView.setOnApplyWindowInsetsListener((v, windowInsets) -> {
-                final Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
-                final ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
-                lp.topMargin = insets.top;
-                lp.bottomMargin = insets.bottom;
-                v.setLayoutParams(lp);
-                return WindowInsets.CONSUMED;
+        if (mainView != null) {
+            final int initialStatusBar = getStatusBarHeight(this);
+            final ViewGroup.LayoutParams rawLp = mainView.getLayoutParams();
+            if (rawLp instanceof ViewGroup.MarginLayoutParams) {
+                final ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) rawLp;
+                if (initialStatusBar > 0) {
+                    lp.topMargin = initialStatusBar;
+                    mainView.setLayoutParams(lp);
+                }
+            }
+
+            ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, windowInsets) -> {
+                final Insets insets = windowInsets.getInsets(
+                        WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+                final ViewGroup.LayoutParams layoutParams = v.getLayoutParams();
+                if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+                    final ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) layoutParams;
+                    int top = insets.top > 0 ? insets.top : getStatusBarHeight(v.getContext());
+                    lp.topMargin = top;
+                    lp.bottomMargin = insets.bottom;
+                    lp.leftMargin = insets.left;
+                    lp.rightMargin = insets.right;
+                    v.setLayoutParams(lp);
+                }
+                onWindowInsetsApplied(insets);
+                return WindowInsetsCompat.CONSUMED;
             });
+            ViewCompat.requestApplyInsets(mainView);
         }
         fab = contentView.findViewById(R.id.fab);
         bindViews(contentView);
@@ -179,6 +221,9 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
         initToolbar();
         populateTabs(tabs);
         tabs.onCreate();
+    }
+
+    protected void onWindowInsetsApplied(@Nonnull Insets insets) {
     }
 
     protected void bindViews(@Nonnull View contentView) {
