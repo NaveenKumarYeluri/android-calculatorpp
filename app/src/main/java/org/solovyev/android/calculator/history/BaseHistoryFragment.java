@@ -27,6 +27,7 @@ import static android.view.View.VISIBLE;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -132,6 +133,18 @@ public abstract class BaseHistoryFragment extends BaseFragment {
         clipboard.setText(displayText);
     }
 
+    protected final void shareItem(@Nonnull HistoryState state) {
+        final Context context = getActivity();
+        if (context == null) {
+            return;
+        }
+        final String text = BaseHistoryFragment.getHistoryText(state);
+        final Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        context.startActivity(Intent.createChooser(intent, context.getString(R.string.c_share)));
+    }
+
     @Override
     public void onDestroyView() {
         bus.unregister(adapter);
@@ -191,6 +204,7 @@ public abstract class BaseHistoryFragment extends BaseFragment {
             Check.isNotNull(state);
             if (recentHistory) {
                 addMenu(menu, R.string.c_use, this);
+                addMenu(menu, R.string.c_share, this);
                 addMenu(menu, R.string.c_copy_expression, this);
                 if (shouldHaveCopyResult(state)) {
                     addMenu(menu, R.string.c_copy_result, this);
@@ -198,6 +212,7 @@ public abstract class BaseHistoryFragment extends BaseFragment {
                 addMenu(menu, R.string.c_save, this);
             } else {
                 addMenu(menu, R.string.c_use, this);
+                addMenu(menu, R.string.c_share, this);
                 addMenu(menu, R.string.c_copy_expression, this);
                 if (shouldHaveCopyResult(state)) {
                     addMenu(menu, R.string.c_copy_result, this);
@@ -219,6 +234,9 @@ public abstract class BaseHistoryFragment extends BaseFragment {
             int itemId = item.getItemId();
             if (itemId == R.string.c_use) {
                 useState(state);
+                return true;
+            } else if (itemId == R.string.c_share) {
+                shareItem(state);
                 return true;
             } else if (itemId == R.string.c_copy_expression) {
                 copyExpression(state);

@@ -69,9 +69,14 @@
     <string name="cpp_numbering_system_indian">Indian (Lakhs, Crores: 10,00,000)</string>
     <string name="not_valid_result">Current result is not valid!</string>
     <string name="c_use">Use</string>
+    <string name="c_share">Share</string>
     <string name="c_copy_expression">Copy expression</string>
     <string name="c_copy_result">Copy result</string>
     <string name="c_result_copied">Result copied to clipboard</string>
+    <string name="cpp_export_history">Export History</string>
+    <string name="cpp_history_empty">History is empty</string>
+    <string name="cpp_history_recent">Recent History</string>
+    <string name="cpp_history_saved">Saved History</string>
     <string name="c_history_expression">Value</string>
     <string name="c_history_comment">Comment</string>
     <string name="cpp_history_tab_saved">Saved</string>
