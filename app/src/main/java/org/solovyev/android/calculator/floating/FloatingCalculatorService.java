@@ -57,6 +57,8 @@ public class FloatingCalculatorService extends Service implements FloatingViewLi
     private static final String NOTIFICATION_CHANNEL_ID = "floating_window";
     private static final int NOTIFICATION_ID = 9031988; // my birthday =)
 
+    private static volatile boolean showing = false;
+
     private FloatingCalculatorView view;
 
     @Inject
@@ -70,8 +72,16 @@ public class FloatingCalculatorService extends Service implements FloatingViewLi
     @Inject
     SharedPreferences preferences;
 
+    public static boolean isShowing() {
+        return showing;
+    }
+
     public static void show(@Nonnull Context context) {
         context.sendBroadcast(createShowWindowIntent(context));
+    }
+
+    public static void hide(@Nonnull Context context) {
+        context.stopService(new Intent(context, FloatingCalculatorService.class));
     }
 
     @Nonnull
@@ -107,6 +117,9 @@ public class FloatingCalculatorService extends Service implements FloatingViewLi
         view.updateEditorState(editor.getState());
         view.updateDisplayState(display.getState());
 
+        showing = true;
+        updateTileState(this);
+
         bus.register(this);
         preferences.registerOnSharedPreferenceChangeListener(this);
     }
@@ -123,6 +136,8 @@ public class FloatingCalculatorService extends Service implements FloatingViewLi
 
     @Override
     public void onDestroy() {
+        showing = false;
+        updateTileState(this);
         if (view != null) {
             preferences.unregisterOnSharedPreferenceChangeListener(this);
             bus.unregister(this);
@@ -130,6 +145,16 @@ public class FloatingCalculatorService extends Service implements FloatingViewLi
             view = null;
         }
         super.onDestroy();
+    }
+
+    private static void updateTileState(@Nonnull Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            try {
+                android.service.quicksettings.TileService.requestListeningState(context,
+                        new android.content.ComponentName(context, FloatingCalculatorTileService.class));
+            } catch (Exception ignored) {
+            }
+        }
     }
 
     @Override

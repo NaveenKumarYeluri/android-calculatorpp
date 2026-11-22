@@ -8,17 +8,15 @@ import android.service.quicksettings.TileService;
 
 import androidx.annotation.RequiresApi;
 
+import org.solovyev.android.calculator.R;
+
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class FloatingCalculatorTileService extends TileService {
 
     @Override
     public void onStartListening() {
         super.onStartListening();
-        final Tile tile = getQsTile();
-        if (tile != null) {
-            tile.setState(Tile.STATE_INACTIVE);
-            tile.updateTile();
-        }
+        updateTileState();
     }
 
     @Override
@@ -36,7 +34,24 @@ public class FloatingCalculatorTileService extends TileService {
                 startActivityAndCollapse(intent);
             }
         } else {
-            FloatingCalculatorService.show(this);
+            if (FloatingCalculatorService.isShowing()) {
+                FloatingCalculatorService.hide(this);
+            } else {
+                FloatingCalculatorService.show(this);
+            }
+        }
+        updateTileState();
+    }
+
+    private void updateTileState() {
+        final Tile tile = getQsTile();
+        if (tile != null) {
+            final boolean isShowing = FloatingCalculatorService.isShowing();
+            tile.setState(isShowing ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                tile.setSubtitle(getString(isShowing ? R.string.cpp_tile_active : R.string.cpp_tile_inactive));
+            }
+            tile.updateTile();
         }
     }
 }

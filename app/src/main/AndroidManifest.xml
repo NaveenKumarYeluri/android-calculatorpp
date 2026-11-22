@@ -167,7 +167,7 @@
         <service
             android:name=".floating.FloatingCalculatorTileService"
             android:exported="true"
-            android:icon="@mipmap/ic_launcher_window"
+            android:icon="@drawable/ic_qs_floating_calculator"
             android:label="@string/cpp_app_name_on_screen"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>

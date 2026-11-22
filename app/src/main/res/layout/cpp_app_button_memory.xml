@@ -30,4 +30,7 @@
     app:directionTextDown="@string/cpp_kb_memory_minus"
     app:directionTextLeft="@string/cpp_kb_memory_clear"
     app:directionTextRight="@string/cpp_kb_memory_store"
+    android:singleLine="true"
+    android:maxLines="1"
+    android:ellipsize="none"
     android:textStyle="bold"/>
