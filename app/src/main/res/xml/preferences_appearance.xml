@@ -34,6 +34,7 @@
         android:title="@string/cpp_prefs_vibrate_on_keypress" />
 
     <androidx.preference.ListPreference
+        android:defaultValue="material_light_amber"
         android:key="gui.theme"
         android:title="@string/cpp_theme" />
 

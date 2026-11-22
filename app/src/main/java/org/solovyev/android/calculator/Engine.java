@@ -102,7 +102,8 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
         this.mathEngine = mathEngine;
 
         this.mathEngine.setPrecision(5);
-        this.mathEngine.setGroupingSeparator(JsclMathEngine.GROUPING_SEPARATOR_DEFAULT);
+        this.mathEngine.setGroupingSeparator(',');
+        this.mathEngine.setNumberingSystem(jscl.NumberingSystem.indian);
     }
 
     private static void migratePreference(@Nonnull SharedPreferences preferences, @Nonnull StringPreference<?> preference, @Nonnull String oldKey, @Nonnull SharedPreferences.Editor editor) {
@@ -165,19 +166,10 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
 
     private void initPreferences(SharedPreferences.Editor editor) {
         if (!Engine.Preferences.Output.separator.isSet(preferences)) {
-            final Locale locale = Locale.getDefault();
-            if (locale != null) {
-                final DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(locale);
-                final int index = MathType.grouping_separator.getTokens().indexOf(String.valueOf(decimalFormatSymbols.getGroupingSeparator()));
-                final char separator;
-                if (index >= 0) {
-                    separator = MathType.grouping_separator.getTokens().get(index).charAt(0);
-                } else {
-                    separator = JsclMathEngine.GROUPING_SEPARATOR_DEFAULT;
-                }
-
-                Engine.Preferences.Output.separator.putPreference(editor, separator);
-            }
+            Engine.Preferences.Output.separator.putPreference(editor, ',');
+        }
+        if (!Engine.Preferences.Output.numberingSystem.isSet(preferences)) {
+            Engine.Preferences.Output.numberingSystem.putPreference(editor, jscl.NumberingSystem.indian);
         }
 
         Engine.Preferences.angleUnit.tryPutDefault(preferences, editor);
@@ -185,7 +177,7 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
         Preferences.Output.notation.tryPutDefault(preferences, editor);
         Preferences.Output.separator.tryPutDefault(preferences, editor);
         Preferences.Output.precision.tryPutDefault(preferences, editor);
-
+        Preferences.Output.numberingSystem.tryPutDefault(preferences, editor);
     }
 
     private void checkPreferences() {
@@ -387,8 +379,8 @@ public class Engine implements SharedPreferences.OnSharedPreferenceChangeListene
         public static class Output {
             public static final StringPreference<Integer> precision = StringPreference.ofTypedValue("engine.output.precision", "5", NumberMapper.of(Integer.class));
             public static final StringPreference<Notation> notation = StringPreference.ofEnum("engine.output.notation", Notation.dec, Notation.class);
-            public static final StringPreference<Character> separator = StringPreference.ofTypedValue("engine.output.separator", JsclMathEngine.GROUPING_SEPARATOR_DEFAULT, CharacterMapper.INSTANCE);
-            public static final Preference<jscl.NumberingSystem> numberingSystem = StringPreference.ofEnum("engine.output.numberingSystem", jscl.NumberingSystem.international, jscl.NumberingSystem.class);
+            public static final StringPreference<Character> separator = StringPreference.ofTypedValue("engine.output.separator", ',', CharacterMapper.INSTANCE);
+            public static final Preference<jscl.NumberingSystem> numberingSystem = StringPreference.ofEnum("engine.output.numberingSystem", jscl.NumberingSystem.indian, jscl.NumberingSystem.class);
         }
     }
 }

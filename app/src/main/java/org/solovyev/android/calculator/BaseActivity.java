@@ -71,7 +71,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SharedPr
     @Nullable
     FloatingActionButton fab;
     @Nonnull
-    private Preferences.Gui.Theme theme = Preferences.Gui.Theme.material_theme;
+    private Preferences.Gui.Theme theme = Preferences.Gui.Theme.material_light_amber;
     @Nonnull
     private Preferences.Gui.Mode mode = Preferences.Gui.Mode.engineer;
     @Nonnull

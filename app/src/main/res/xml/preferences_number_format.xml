@@ -33,12 +33,14 @@
         android:title="@string/cpp_precision" />
 
     <androidx.preference.ListPreference
+        android:defaultValue=","
         android:entries="@array/cpp_thousands_separator_names"
         android:entryValues="@array/cpp_thousands_separators"
         android:key="engine.output.separator"
         android:title="@string/cpp_thousands_separator" />
 
     <androidx.preference.ListPreference
+        android:defaultValue="indian"
         android:entries="@array/cpp_numbering_system_names"
         android:entryValues="@array/cpp_numbering_systems"
         android:key="engine.output.numberingSystem"

@@ -260,7 +260,7 @@ public final class Preferences {
 
     public static class Gui {
 
-        public static final Preference<Theme> theme = StringPreference.ofEnum("gui.theme", Theme.material_theme, Theme.class);
+        public static final Preference<Theme> theme = StringPreference.ofEnum("gui.theme", Theme.material_light_amber, Theme.class);
         public static final Preference<Mode> mode = StringPreference.ofEnum("gui.mode", Mode.simple, Mode.class);
         public static final Preference<String> language = StringPreference.of("gui.language", Languages.SYSTEM_LANGUAGE_CODE);
         public static final Preference<Boolean> showReleaseNotes = BooleanPreference.of("gui.showReleaseNotes", true);

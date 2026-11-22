@@ -39,25 +39,25 @@
     </string-array>
 
     <string-array name="cpp_thousands_separator_names">
-        <item>@string/cpp_thousands_separator_no</item>
         <item>@string/cpp_thousands_separator_comma</item>
-        <item>@string/cpp_thousands_separator_apostrophe</item>
         <item>@string/cpp_thousands_separator_space</item>
+        <item>@string/cpp_thousands_separator_apostrophe</item>
+        <item>@string/cpp_thousands_separator_no</item>
     </string-array>
     <string-array name="cpp_thousands_separators" translatable="false">
-        <item>""</item>
         <item>,</item>
-        <item>\'</item>
         <item>" "</item>
+        <item>\'</item>
+        <item>""</item>
     </string-array>
 
     <string-array name="cpp_numbering_system_names">
-        <item>@string/cpp_numbering_system_international</item>
         <item>@string/cpp_numbering_system_indian</item>
+        <item>@string/cpp_numbering_system_international</item>
     </string-array>
     <string-array name="cpp_numbering_systems" translatable="false">
-        <item>international</item>
         <item>indian</item>
+        <item>international</item>
     </string-array>
 
     <string-array name="cpp_layout_names">

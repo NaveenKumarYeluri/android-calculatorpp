@@ -36,6 +36,7 @@ public class Tests {
     public static Engine makeEngine() {
         final JsclMathEngine mathEngine = JsclMathEngine.getInstance();
         mathEngine.setGroupingSeparator(' ');
+        mathEngine.setNumberingSystem(NumberingSystem.international);
         final Engine engine = new Engine(mathEngine);
         engine.postfixFunctionsRegistry = init(new PostfixFunctionsRegistry(mathEngine));
         engine.functionsRegistry = init(new FunctionsRegistry(mathEngine));

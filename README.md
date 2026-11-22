@@ -8,13 +8,15 @@
 
 **Calculator++ (Modernized & Privacy Edition)** is a fast, elegant, and exceptionally powerful scientific calculator for Android. It combines intuitive gesture-based drag buttons, an on-screen floating calculator window, embedded symbolic mathematics (JSCL), 2D/3D function plotting, numeral base conversion, digital storage conversion, memory functions, and Material 3 / Material You dynamic theming into a **100% offline, privacy-first** application with **zero ads, zero tracking, and zero in-app purchases**.
 
+By default, the application features a warm, high-contrast **White Amber** Material 3 theme and formats numbers according to the **Indian numbering format with comma separator (`10,00,000`)**.
+
 ---
 
 ## 📑 Table of Contents
 
 - [🌟 Acknowledgements & Credits](#-acknowledgements--credits)
 - [📥 Download & Installation](#-download--installation)
-- [🚀 Major Modernizations in v3.0.0](#-major-modernizations-in-v300)
+- [🚀 Major Modernizations & Enhancements](#-major-modernizations--enhancements)
 - [✨ Features](#-features)
 - [🧮 Symbolic Computation Engine](#-symbolic-computation-engine)
 - [🎨 Themes & Customization](#-themes--customization)
@@ -38,8 +40,8 @@ This project stands on the shoulders of giants. We express our deepest gratitude
 - **[Naveen Kumar Yeluri](https://github.com/NaveenKumarYeluri)** (`naveenk0513@zohomail.in`)
   - Updated to **Android 15 (API 35)** with edge-to-edge system window insets and modern runtime permissions.
   - Re-architected for **100% offline privacy**: excised all network permissions, Google Ads, Firebase Analytics/Crashlytics, and Google Play Billing.
-  - Designed **Material Design 3 rounded styling** and **Material You (Monet) dynamic theming** with AMOLED True Black and rich accent palettes.
-  - Added **Indian Numbering System** formatting (Lakhs and Crores: `10,00,000`).
+  - Configured **White Amber** as the elegant default theme, and built **Material Design 3 rounded styling** and **Material You (Monet) dynamic theming** with AMOLED True Black and rich accent palettes.
+  - Configured default **Indian Numbering System with comma grouping** (Lakhs and Crores: `10,00,000`).
   - Implemented **Memory calculator functions** (`MC`, `MR`, `M+`, `M-`, `MS`) with on-display indicator.
   - Added **Digital Storage unit converter** (bits to petabytes, binary and decimal prefixes).
   - Built **Quick Settings Tile integration** and **Display Quick Copy** for the floating calculator.
@@ -63,47 +65,51 @@ This project stands on the shoulders of giants. We express our deepest gratitude
 
 Pre-built APKs for Android 5.0+ (Lollipop) through Android 15 are published on the releases page:
 
-### 📦 [Download the Latest Release (v3.0.0)](https://github.com/NaveenKumarYeluri/android-calculatorpp/releases/latest)
+### 📦 [Download the Latest Release](https://github.com/NaveenKumarYeluri/android-calculatorpp/releases/latest)
 
 | Package | Description | Recommended For |
 |:---|:---|:---|
-| **`CalculatorPlusPlus-v3.0.0.apk`** | Standard signed release APK | **All Users** |
-| **`CalculatorPlusPlus-v3.0.0-release.apk`** | Signed release build | General Installation |
-| **`CalculatorPlusPlus-v3.0.0-debug.apk`** | Debug build with extra diagnostic logs | Developers / Testers |
+| **`CalculatorPlusPlus-v3.0.1.apk`** | Standard signed release APK | **All Users** |
+| **`CalculatorPlusPlus-v3.0.1-release.apk`** | Signed release build | General Installation |
+| **`CalculatorPlusPlus-v3.0.1-debug.apk`** | Debug build with extra diagnostic logs | Developers / Testers |
 
 ### 📲 Installation Instructions
-1. Download **`CalculatorPlusPlus-v3.0.0.apk`** from the [GitHub Releases](https://github.com/NaveenKumarYeluri/android-calculatorpp/releases/latest).
+1. Download **`CalculatorPlusPlus-v3.0.1.apk`** from [GitHub Releases](https://github.com/NaveenKumarYeluri/android-calculatorpp/releases/latest).
 2. Tap the downloaded file in your browser or file manager.
 3. If prompted, grant permission to *"Install unknown apps"* for your browser or file manager.
 4. Tap **Install** and enjoy a private, ad-free, full-featured scientific calculator!
 
 ---
 
-## 🚀 Major Modernizations in v3.0.0
+## 🚀 Major Modernizations & Enhancements
 
-### 🔒 1. 100% Offline & Absolute Privacy
+### 🎨 1. Default White Amber Theme & Rich Material UI
+- **White Amber by Default**: High-contrast, clean light theme with vivid amber accents and matching cold-start splash icon.
+- **Material You Dynamic Theming (Monet)**: Adapts calculator colors dynamically to match your device wallpaper and system theme on Android 12+.
+- **Curated Theme Options**:
+  - **White (Material Light)**: Clean light theme with 7 accent choices (Amber, Teal, Blue, Green, Purple, Red, Pink).
+  - **Black (Material Dark)**: Modern slate dark theme with `#121212` surfaces.
+  - **True Black (AMOLED)**: Pitch black `#000000` background for maximum OLED battery savings and razor-sharp contrast.
+  - **Grey (Material Neutral)**: Eye-friendly slate grey (`#2B2D30`) designed for long sessions.
+- **Material 3 Rounded Keypad**: Contemporary squircle/pill button geometry with interactive touch ripples.
+
+### 🔢 2. Default Indian Numbering Format (Lakhs & Crores)
+- **Default Indian Format with Comma**: Formats numbers automatically using Lakhs and Crores (e.g., `10,00,000` and `1,00,00,000`).
+- **International / Western Format**: Readily switchable to Western formatting (e.g., `1,000,000`).
+- **Flexible Grouping Separators**: Choose between Comma (`,`), Space (` `), Apostrophe (`'`), or None (`OFF`), with instant live preview in settings.
+
+### 🔒 3. 100% Offline & Absolute Privacy
 - **Zero Network Permissions**: Completely removed `android.permission.INTERNET` and `android.permission.ACCESS_NETWORK_STATE`. The application is physically incapable of connecting to the internet or transmitting any data.
 - **Zero Ads & Trackers**: Completely removed Google Mobile Ads SDK (`play-services-ads`), Firebase Crashlytics, and Firebase Analytics. No telemetry, no background beacons, no profiling.
 - **Zero In-App Purchases**: Completely stripped Google Play Billing (`checkout`) library, billing permissions, and payment prompts. The entire application is 100% free and open source.
 
-### 📱 2. Target Android 15 (API 35) & Modern Frameworks
+### 📱 4. Target Android 15 (API 35) & Modern Frameworks
 - Upgraded project toolchains to **compileSdk 35** and **targetSdk 35** (Android 15) using **Java 17** and Gradle 8.6+.
 - **Edge-to-Edge System Bar Insets**: Handles system window insets across all activities, ensuring seamless layout rendering behind the status bar and gesture navigation bar.
 - **Modern Overlay Support**: Full compatibility with Android 14/15 `TYPE_APPLICATION_OVERLAY` for the floating calculator window.
 - **Themed Monochrome Launcher Icon**: Full support for Android 13+ **Material You dynamic themed icons** on compatible launchers.
 
-### 🎨 3. Material Design 3 UI & Rich Theming
-- **Material You Dynamic Theming (Monet)**: Adapts calculator colors dynamically to match your device wallpaper and system theme on Android 12+.
-- **Tailored Theme Options**:
-  - **White (Material Light)**: Clean, high-contrast light theme with 7 accent choices.
-  - **Black (Material Dark)**: Modern slate dark theme with `#121212` surfaces.
-  - **True Black (AMOLED)**: Pitch black `#000000` background for maximum OLED battery savings and razor-sharp contrast.
-  - **Grey (Material Neutral)**: Eye-friendly slate grey (`#2B2D30`) designed for long sessions.
-- **7 Vibrant Accents**: Teal, Blue, Green, Purple, Amber, Red, and Pink.
-- **Theme-Aligned Android 12+ Splash Screen**: Smooth cold-start launch animation matching your selected theme.
-- **Material 3 Rounded Keypad**: Contemporary squircle/pill button geometry with interactive touch ripples.
-
-### 💾 4. Memory Calculator Functions (MC, MR, M+, M-, MS)
+### 💾 5. Memory Calculator Functions (MC, MR, M+, M-, MS)
 - Dedicated memory operations accessible directly on the keypad:
   - **`MS` (Memory Store)**: Save the current value into memory.
   - **`MR` (Memory Recall)**: Recall the stored value into the current calculation.
@@ -111,11 +117,6 @@ Pre-built APKs for Android 5.0+ (Lollipop) through Android 15 are published on t
   - **`M-` (Memory Subtract)**: Subtract the current value from the value in memory.
   - **`MC` (Memory Clear)**: Reset the memory register.
 - Visual **`M`** indicator on the display header whenever a value is retained in memory.
-
-### 🔢 5. Flexible Number Formatting (Indian & International)
-- **Indian Numbering Format**: Groups digits using Lakhs and Crores (e.g., `10,00,000` and `1,00,00,000`).
-- **International / Western Format**: Groups digits using Thousands and Millions (e.g., `1,000,000`).
-- **Configurable Grouping Separators**: Choose between Space (` `), Apostrophe (`'`), Comma (`,`), or None (`OFF`), with instant live preview in settings.
 
 ### 💱 6. Unit & Base Converter with Digital Storage
 - **Digital Storage Dimension**: Convert effortlessly between Bits, Bytes, KB, MB, GB, TB, PB, KiB, MiB, GiB, TiB, and PiB.

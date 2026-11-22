@@ -110,7 +110,7 @@
 
     <!-- Splash Screen Palette -->
     <color name="splash_bg">#ffffff</color>
-    <color name="splash_icon_color">#1976d2</color>
+    <color name="splash_icon_color">@color/accent_amber</color>
 
     <!-- Accent Color Palette (Light) -->
     <color name="accent_blue">#1976D2</color>

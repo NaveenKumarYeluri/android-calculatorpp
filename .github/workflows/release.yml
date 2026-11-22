@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: 'Tag name for release (e.g. v3.0.0)'
+        description: 'Tag name for release (e.g. v3.0.1)'
         required: false
-        default: 'v3.0.0'
+        default: 'v3.0.1'
 
 permissions:
   contents: write
@@ -42,14 +42,15 @@ jobs:
       - name: Prepare Release Artifacts
         run: |
           mkdir -p release-artifacts
+          TAG="${{ github.event.inputs.tag_name || github.ref_name }}"
           if [ -f app/build/outputs/apk/release/app-release.apk ]; then
-            cp app/build/outputs/apk/release/app-release.apk release-artifacts/CalculatorPlusPlus-v3.0.0.apk
-            cp app/build/outputs/apk/release/app-release.apk release-artifacts/CalculatorPlusPlus-v3.0.0-release.apk
+            cp app/build/outputs/apk/release/app-release.apk "release-artifacts/CalculatorPlusPlus-${TAG}.apk"
+            cp app/build/outputs/apk/release/app-release.apk "release-artifacts/CalculatorPlusPlus-${TAG}-release.apk"
           fi
           if [ -f app/build/outputs/apk/debug/app-debug.apk ]; then
-            cp app/build/outputs/apk/debug/app-debug.apk release-artifacts/CalculatorPlusPlus-v3.0.0-debug.apk
-            if [ ! -f release-artifacts/CalculatorPlusPlus-v3.0.0.apk ]; then
-              cp app/build/outputs/apk/debug/app-debug.apk release-artifacts/CalculatorPlusPlus-v3.0.0.apk
+            cp app/build/outputs/apk/debug/app-debug.apk "release-artifacts/CalculatorPlusPlus-${TAG}-debug.apk"
+            if [ ! -f "release-artifacts/CalculatorPlusPlus-${TAG}.apk" ]; then
+              cp app/build/outputs/apk/debug/app-debug.apk "release-artifacts/CalculatorPlusPlus-${TAG}.apk"
             fi
           fi
           ls -la release-artifacts/
@@ -60,31 +61,32 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.inputs.tag_name || github.ref_name }}
-          name: "Calculator++ v3.0.0 (Modernized & Privacy Edition)"
+          name: "Calculator++ ${{ github.event.inputs.tag_name || github.ref_name }} (Modernized & Privacy Edition)"
           draft: false
           prerelease: false
           generate_release_notes: true
           files: release-artifacts/*.apk
           body: |
-            ## Calculator++ v3.0.0 (Modernized & Privacy Edition)
+            ## Calculator++ ${{ github.event.inputs.tag_name || github.ref_name }} (Modernized & Privacy Edition)
 
-            A major modernization release updating Calculator++ to Android 15 (API 35) with a privacy-first, zero-permission architecture, rich Material Design 3 themes, Indian & international numbering formats, memory functions, digital storage conversions, and floating calculator enhancements.
+            A major modernization release updating Calculator++ to Android 15 (API 35) with a privacy-first, zero-permission architecture, default White Amber theme, default Indian numbering format with comma separator (`10,00,000`), memory functions, digital storage conversions, and floating calculator enhancements.
 
             ### 🌟 Key Highlights & Changes
+            - **Default White Amber Theme**: Clean, warm, high-contrast light theme with rich amber accents and matching Android 12+ splash screen.
+            - **Default Indian Numbering with Comma Separator**: Formats numbers automatically in Lakhs and Crores using comma grouping (`10,00,000`), with instant toggle to international formats.
             - **100% Offline & Absolute Privacy**: Removed all internet and network state permissions. Completely purged Google Mobile Ads, Firebase Analytics/Crashlytics, and Google Play Billing dependencies.
             - **Target Android 15 (API 35)**: Updated SDK targets, edge-to-edge window insets handling, and Android 14/15 overlay window permissions.
-            - **Material 3 UI & Rich Theming**: Added Material You (Monet dynamic colors for Android 12+), AMOLED True Black theme, Slate Grey theme, and 7 vibrant accent colorways (Teal, Blue, Green, Purple, Amber, Red, Pink).
+            - **Material 3 UI & Rich Theming**: Added Material You (Monet dynamic colors for Android 12+), AMOLED True Black theme, Slate Grey theme, and 7 vibrant accent colorways (Amber, Teal, Blue, Green, Purple, Red, Pink).
             - **Memory Calculator Functions**: Added dedicated `MC`, `MR`, `M+`, `M-`, and `MS` operations with real-time on-display indicator.
-            - **Indian & Western Numbering Formatting**: Support for Indian Lakhs/Crores (`10,00,000`) and Western formatting with configurable separators (apostrophe, space, comma, or none).
             - **Digital Storage Converter**: Unit converter now supports bits, bytes, KB, MB, GB, TB, PB, KiB, MiB, GiB, TiB, and PiB alongside base conversions (HEX, DEC, OCT, BIN).
             - **Floating Calculator Quick Settings Tile**: Direct access tile in Android Quick Settings shade to launch the floating calculator instantly.
             - **Export & Share History**: Share calculation history as text or CSV via standard Android share sheet.
             - **Modern Haptics**: Context-aware vibrational feedback powered by Android's `VibrationEffect` (click and tick modes).
 
             ### 📦 Downloads
-            - **`CalculatorPlusPlus-v3.0.0.apk`** — Standard ready-to-install APK (signed).
-            - **`CalculatorPlusPlus-v3.0.0-release.apk`** — Release build APK.
-            - **`CalculatorPlusPlus-v3.0.0-debug.apk`** — Debug build APK.
+            - **`CalculatorPlusPlus-${{ github.event.inputs.tag_name || github.ref_name }}.apk`** — Standard ready-to-install APK (signed).
+            - **`CalculatorPlusPlus-${{ github.event.inputs.tag_name || github.ref_name }}-release.apk`** — Release build APK.
+            - **`CalculatorPlusPlus-${{ github.event.inputs.tag_name || github.ref_name }}-debug.apk`** — Debug build APK.
 
             ### 🤝 Credits & Acknowledgements
             - **Original Creator & Architect**: Sergey Solovyev ([@serso](https://github.com/serso))

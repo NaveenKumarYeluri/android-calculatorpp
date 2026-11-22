@@ -33,7 +33,7 @@ public class JsclMathEngine implements MathEngine {
 
     public static final AngleUnit DEFAULT_ANGLE_UNITS = AngleUnit.deg;
     public static final NumeralBase DEFAULT_NUMERAL_BASE = NumeralBase.dec;
-    public static final char GROUPING_SEPARATOR_DEFAULT = ' ';
+    public static final char GROUPING_SEPARATOR_DEFAULT = ',';
     @Nonnull
     private static JsclMathEngine instance = new JsclMathEngine();
     @Nonnull
@@ -334,7 +334,7 @@ public class JsclMathEngine implements MathEngine {
     }
 
     @Nonnull
-    private NumberingSystem numberingSystem = NumberingSystem.international;
+    private NumberingSystem numberingSystem = NumberingSystem.indian;
 
     public void setNumberingSystem(@Nonnull NumberingSystem numberingSystem) {
         this.numberingSystem = numberingSystem;

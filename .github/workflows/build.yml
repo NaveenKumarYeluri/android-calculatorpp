@@ -32,13 +32,13 @@ jobs:
       - name: Upload Debug APK
         uses: actions/upload-artifact@v7
         with:
-          name: calculatorpp-v3.0.0-debug-apk
+          name: calculatorpp-debug-apk
           path: app/build/outputs/apk/debug/*.apk
           retention-days: 30
 
       - name: Upload Release APK
         uses: actions/upload-artifact@v7
         with:
-          name: calculatorpp-v3.0.0-release-apk
+          name: calculatorpp-release-apk
           path: app/build/outputs/apk/release/*.apk
           retention-days: 30
